@@ -3,16 +3,19 @@ import subprocess
 import random
 import string
 import time
+import ConfigParser
 from flask import Flask, flash, request, redirect, url_for, render_template, session, escape, Response
 from werkzeug import secure_filename
 
+config = ConfigParser.RawConfigParser()
+config.read('default.cfg')
 
-perlPath = '/usr/bin/perl ' + os.path.join(os.getcwd(),'triPOD.pl')
+perlPath = ' '.join(config.get('paths', 'perl'), os.path.join(os.getcwd(),'triPOD.pl'))
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = '/Users/matt/Downloads/'
-app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024
-app.secret_key = '}2\xefT\xb2e\xf5@0\xd3I\xf5\n\xbfQ\x10o\xa2\xd0\xe7\x18\x12[\x98'
+app.config['UPLOAD_FOLDER'] = config.get('paths', 'upload')
+app.config['MAX_CONTENT_LENGTH'] = config.get('param', 'max_upload')
+app.secret_key = config.get('param', 'secret_key')
 
 def allowed_file(filename):
     return '.' in filename and \
