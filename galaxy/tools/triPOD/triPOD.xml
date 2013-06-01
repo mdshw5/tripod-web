@@ -1,0 +1,21 @@
+<tool id="triPOD" name="Identify mosaic abnormalities in a trio using parent of origin detection">
+  <description>for each file containing a trio of SNP data</description>
+  <command interpreter="perl">triPOD.pl --nograph --build=$build  --out=. $input</command>
+  <inputs>
+    <param format="tabular" name="input" type="data" label="Source file"/>
+    <param name="build" type="select" label="Select a genome build">
+       <options from_file="triPOD_genome.loc">
+	  <column name="name" index="0"/>
+	  <column name="value" index="1"/>
+       </options>
+    </param>
+  </inputs>
+  <outputs>
+    <data format="tabular" name="triPOD_Results.txt" />
+  </outputs>
+
+  <help>
+This tool detects mosaic abnormalities when supplied with a trio of SNP data. See http://pevsnerlab.kennedykrieger.org for information about local usage and licensing.
+  </help>
+
+</tool>
