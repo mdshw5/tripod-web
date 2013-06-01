@@ -10,7 +10,7 @@ from werkzeug import secure_filename
 config = ConfigParser.RawConfigParser()
 config.read('default.cfg')
 
-perlPath = ' '.join(config.get('paths', 'perl'), os.path.join(os.getcwd(),'triPOD.pl'))
+perlPath = ' '.join([config.get('paths', 'perl'), os.path.join(os.getcwd(),'triPOD.pl')])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = config.get('paths', 'upload')
