@@ -1,0 +1,27 @@
+<!doctype html>
+<title>triPOD</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<script language="javascript"> 
+function toggle() {
+	var ele = document.getElementById("toggle");
+	var text = document.getElementById("displayText");
+	if(ele.style.display == "block") {
+		ele.style.display = "none";
+		text.innerHTML = "Show detection methods";
+	}
+	else {
+		ele.style.display = "block";
+		text.innerHTML = "Hide detection methods";
+	}
+} 
+</script>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <a class=flashes>
+    {% for category, message in messages %}
+      <p class="{{ category }}"><em>{{ message }}</em>
+    {% endfor %}
+    </a>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}

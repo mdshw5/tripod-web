@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "SNP-POA user"
+AuthUserFile /etc/httpd/passwords
+Require user review
