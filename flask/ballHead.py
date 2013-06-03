@@ -78,8 +78,10 @@ def progress(pid):
 @app.route('/status/<pid>')
 def status(pid):
     """ Wait until the PID does not exist, and report success."""
+    print '/proc/' + str(unmask_pid(int(pid)))
     while os.path.exists('/proc/' + str(unmask_pid(int(pid)))):
-        time.sleep(0.5)
+        time.sleep(2)
+        print os.path.exists('/proc/' + str(unmask_pid(int(pid))))
     return 'success'
     
 @app.route('/results')
