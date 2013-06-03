@@ -78,10 +78,10 @@ def progress(pid):
 @app.route('/status/<pid>')
 def status(pid):
     """ Wait until the PID does not exist, and report success."""
-    print '/proc/' + str(unmask_pid(int(pid)))
-    while os.path.exists('/proc/' + str(unmask_pid(int(pid)))):
+    pid = str(unmask_pid(int(pid)))
+    print '/proc/' + pid
+    while os.path.exists('/proc/' + pid):
         time.sleep(2)
-        print os.path.exists('/proc/' + str(unmask_pid(int(pid))))
     return 'success'
     
 @app.route('/results')
@@ -92,12 +92,10 @@ def results():
 def mask_pid(pid):
     """ Mask the PID before passing it around """
     pid = pid * pid_mask[0]
-    pid = pid + pid_mask[1]
     return pid
 
 def unmask_pid(pid):
     """ Return actual PID from masked PID """
-    pid = pid - pid_mask[1]
     pid = pid / pid_mask[0]
     return pid
 
