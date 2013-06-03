@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
-  <h1>Upload</h1>
-  <form enctype="multipart/form-data" action="" method=post> 
+<h1>Upload</h1>
+<form id="options" enctype="multipart/form-data" action="" method=post> 
 <table width="100%" border="0" cellpadding="6" cellspacing="3"> 
 
 <tr class="rowcommon"> 
@@ -44,8 +44,10 @@
 <tr class="rowcommon"> 
 <td class="cell1 cell1width">Step 5</td> 
 <td class="cell2 cell2width">Submit query. Note that large files will take some time to upload.</td> 
-<td class="cell2"><input type=submit value=Upload></td> 
+<td class="cell2"><input id="submit" type=submit value=Upload></td> 
 </tr>  
+
+<div class="submitted"><p><a>File upload is in progress. Please wait.</a></div>
 
 <tr class="rowcommon">
 <td class="cell1 cell1width">(optional) Detection Methods</td> 

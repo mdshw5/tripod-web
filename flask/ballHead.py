@@ -83,15 +83,18 @@ def progress(status):
                    '--out=' + session['output'],
                    session['filename']
         ]
+
         tripod = subprocess.Popen(' '.join(command),
                                   shell=True, 
                                   stdout=subprocess.PIPE,
                                   stderr=subprocess.PIPE
                                   )
-        flash(tripod.stdout.readlines())
-        return redirect(url_for('progress', status='results'))
+
+        session['pid'] = tripod.pid
+        
+        return redirect(url_for('progress', status='running'))
     
-    elif status == 'results':
+    elif status == 'running':
         return render_template('progress.html')
 
 if __name__ == '__main__':

@@ -1,7 +1,15 @@
 <!doctype html>
 <title>triPOD</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<script language="javascript"> 
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+$(document).ready(function(){
+  $(".submitted").hide();
+  $("#options").submit(function(){
+    $(".submitted").toggle();
+  });
+});
+
 function toggle() {
 	var ele = document.getElementById("toggle");
 	var text = document.getElementById("displayText");
