@@ -11,6 +11,8 @@ config = ConfigParser.RawConfigParser()
 config.read('default.cfg')
 
 perlPath = ' '.join([config.get('paths', 'perl'), os.path.join(os.getcwd(),'triPOD.pl')])
+pid_mask = [int(n) for n in config.get('param', 'pid_mask').split(',')]
+print pid_mask
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = config.get('paths', 'upload')
@@ -39,63 +41,63 @@ def upload():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], salt, filename))
             flash(u"{0} was uploaded successfully!".format(filename))
-            session['gender'] = request.form['gender']
-            session['alpha'] = request.form['alpha']
-            session['build'] = request.form['build']
-            session['pod'] = request.form['pod']
-            session['podhd'] = request.form['podhd']
-            session['podmi1'] = request.form['podmi1']
-            session['podcr'] = request.form['podcr']
+            command = [perlPath,
+                       '--gender=' + request.form['gender'],
+                       '--graph=png',
+                       '--alpha=' + request.form['alpha'],
+                       '--build=' + os.path.join(os.getcwd(),request.form['build']),
+                       '--' + request.form['pod'], 
+                       '--' + request.form['podhd'], 
+                       '--' + request.form['podmi1'], 
+                       '--' + request.form['podcr'], 
+                       '--out=' + request.form['output'],
+                       request.form['filename']
+            ]
+
+            tripod = subprocess.Popen(' '.join(command),
+                                      shell=True, 
+                                      stdout=subprocess.PIPE,
+                                      stderr=subprocess.PIPE
+                                      )
+
             session['filename'] = os.path.join(app.config['UPLOAD_FOLDER'], salt, filename)
             session['output'] = os.path.join(app.config['UPLOAD_FOLDER'], salt)
-            return redirect(url_for('progress', status='success'))
+            session['pid'] = tripod.pid
+            return redirect(url_for('progress', pid=mask_pid(tripod.pid)))
 
         elif not allowed_file(file.filename):
-            return redirect(url_for('progress', status='type_not_allowed'))
+            flash(u"File type must be .txt .csv or .tsv", 'error')
+            return redirect(url_for('upload'))
 
-        
     return render_template('upload.html')
 
-@app.route('/error')
-def upload_error():
-    return render_template('error.html')
+@app.route('/progress/<pid>')
+def progress(pid):
+    return render_template('progress.html', pid=pid)
 
-@app.route('/success')
-def success():
-    return render_template('success.html')
-
-@app.route('/progress/<status>')
-def progress(status):
-    if status == 'type_not_allowed':
-        flash(u"File type must be .txt .csv or .tsv", 'error')
-        return redirect(url_for('upload'))
-
-    elif status == 'success':
-        command = [perlPath,
-                   '--gender=' + session['gender'],
-                   '--graph=png',
-                   '--alpha=' + session['alpha'],
-                   '--build=' + os.path.join(os.getcwd(),session['build']),
-                   '--' + session['pod'], 
-                   '--' + session['podhd'], 
-                   '--' + session['podmi1'], 
-                   '--' + session['podcr'], 
-                   '--out=' + session['output'],
-                   session['filename']
-        ]
-
-        tripod = subprocess.Popen(' '.join(command),
-                                  shell=True, 
-                                  stdout=subprocess.PIPE,
-                                  stderr=subprocess.PIPE
-                                  )
-
-        session['pid'] = tripod.pid
-        
-        return redirect(url_for('progress', status='running'))
+@app.route('/status/<pid>')
+def status(pid):
+    """ Wait until the PID does not exist, and report success."""
+    while os.path.exists('/proc/' + str(unmask_pid(int(pid)))):
+        time.sleep(0.5)
+    return 'success'
     
-    elif status == 'running':
-        return render_template('progress.html')
+@app.route('/results')
+def results():
+    """ Format the final results page and return template."""
+    return render_template('results.html')
+
+def mask_pid(pid):
+    """ Mask the PID before passing it around """
+    pid = pid * pid_mask[0]
+    pid = pid + pid_mask[1]
+    return pid
+
+def unmask_pid(pid):
+    """ Return actual PID from masked PID """
+    pid = pid - pid_mask[1]
+    pid = pid / pid_mask[0]
+    return pid
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

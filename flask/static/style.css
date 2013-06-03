@@ -3,7 +3,12 @@ a, h1, h2       { color: #377BA8; }
 h1, h2          { font-family: 'Georgia', serif; margin: 0; }
 h1              { border-bottom: 2px solid #eee; }
 h2              { font-size: 1.2em; }
+.table          { width: 100%; border: 0; 
+		  cellpadding: 6; cellspacing: 3; }
 .flash          { background: #CEE5F5; padding: 0.5em;
                   border: 1px solid #AACBE2; }
 .error          { background: #F0D6D6; padding: 0.5em; }
 .show_hide      { display:none; }
+.extras         { background: #F0D6D6; padding: 0.5em; }
+#updated        { background-color: yellow; width: 1.1in; float: right;
+                  margin-left: auto; margin-right: auto; }

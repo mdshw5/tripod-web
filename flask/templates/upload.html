@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% block body %}
+<script src="{{ url_for("static", filename="upload.js") }}"></script>
 <h1>Upload</h1>
 <form id="options" enctype="multipart/form-data" action="" method=post> 
-<table width="100%" border="0" cellpadding="6" cellspacing="3"> 
+<table class="table">
 
 <tr class="rowcommon"> 
 <td class="cell1 cell1width">Step 1</td> 
@@ -47,20 +48,20 @@
 <td class="cell2"><input id="submit" type=submit value=Upload></td> 
 </tr>  
 
-<div class="submitted"><p><a>File upload is in progress. Please wait.</a></div>
+<div id="submitted"><p><a>File upload is in progress. Please wait.</a></div>
 
 <tr class="rowcommon">
 <td class="cell1 cell1width">(optional) Detection Methods</td> 
 <td class="cell2 cell2width">Changing the detection methods used will alter your results.</td>
 <td class="cell2">
-<a id="displayText" href="javascript:toggle();">Show detection methods</a>
+<a href="#" id="show_hide">Show/Hide detection methods</a>
 
 </td>
 
 </table>
 
-<div id="toggle" style="display: none">
-<table width="100%" border="0" cellpadding="6" cellspacing="3"> 
+<div class="extras">
+<table class="table"> 
 
 <tr class="rowcommon"> 
 <td class="cell1 cell1width">POD</td> 
@@ -111,5 +112,3 @@
 
 </form> 
 {% endblock %}
-
-
