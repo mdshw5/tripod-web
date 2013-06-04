@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Results</h1>
+<p><center><table id="results">
+<tr><td rowspan="3">Regions detected in sample {{ filename }}</td>
+<td><a href='{{ txtResults }}'>Download results table as text file.</a></td></tr>
+<tr><td><a href='{{ bedResults }}'>Download results table as bed file.</a></td></tr>
+<tr><td><a href="http://genome.ucsc.edu/cgi-bin/hgTracks?db={{ build }}&position={{ ucscPos }}&org=human&hgt.customText={{ ucscURL }}" target="_blank">View results in UCSC Genome Browser</a></td></tr>
+</table>
+
+{% endblock %}
