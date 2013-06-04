@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
+{% block body %}
 <script src="{{ url_for("static", filename="lpoll.js") }}"></script>
+<h1>Processing</h1>
+<div class="results"></div>
 <script>
 $(document).ready(function() {
-    $("div#results").append("Running triPOD...");
-    wait_for_update({{ pid }});
+  $(".results").append("Running triPOD...");
+  wait_for_update({{ id }});
 });
 </script>
-{% block body %}
-<h1>Processing</h1>
-<div id="results"></div>
 {% endblock %}
