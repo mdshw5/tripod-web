@@ -3,8 +3,10 @@ import random
 import re
 import string
 import time
+import shutil
+from collections import OrderedDict
 import ConfigParser
-from flask import Flask, flash, request, redirect, url_for, render_template, session, escape, Response
+from flask import Flask, flash, request, redirect, url_for, render_template, session, escape, Response, send_from_directory
 from werkzeug import secure_filename
 from celery.result import AsyncResult
 from celery import Celery
@@ -14,10 +16,11 @@ celery = Celery()
 celery.config_from_object('celeryconfig')
 
 config = ConfigParser.RawConfigParser()
-config.read(os.path.join('/opt/tripod/flask','default.cfg'))
+config.read(os.path.join(os.getcwd(),'default.cfg'))
 
 perl = config.get('paths', 'perl')
 tripodPath = os.path.join(config.get('paths','install'),'triPOD.pl')
+sampledata = os.path.join(config.get('paths','install'),'sampledata.txt')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = config.get('paths', 'upload')
@@ -38,37 +41,39 @@ def upload():
     triPOD parameter validation. 
     """
     if request.method == 'POST':
-        file = request.files['file']
+        salt = ''.join(random.choice(string.ascii_lowercase + string.digits) for x in range(12))
+        os.mkdir(os.path.join(app.config['UPLOAD_FOLDER'], salt))
+        session['out'] = os.path.join(app.config['UPLOAD_FOLDER'], salt)
+        if request.form['sampledata'] != "Use":
+            file = request.files['file']
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], salt, filename))
+                session['filename'] = os.path.join(app.config['UPLOAD_FOLDER'], salt, filename)
+            elif not allowed_file(file.filename):
+                flash(u"File type must be .txt .csv or .tsv", 'error')
+                return redirect(url_for('upload'))
+        elif request.form['sampledata'] == "Use":
+            shutil.copy(sampledata, session['out'])
+            session['filename'] = os.path.join(app.config['UPLOAD_FOLDER'], salt, os.path.basename(sampledata))
+        flash(u"{0} was uploaded successfully!".format(session['filename']))
+        session['build'] = request.form['build']
+        command = [perl, tripodPath,
+                   '--gender=' + request.form['gender'],
+                   '--graph=png',
+                   '--alpha=' + request.form['alpha'],
+                   '--build=' + os.path.join(config.get('paths','install'),request.form['build']),
+                   '--' + request.form['pod'], 
+                   '--' + request.form['podhd'], 
+                   '--' + request.form['podmi1'], 
+                   '--' + request.form['podcr'], 
+                   '--out=' + session['out'],
+                   session['filename']
+        ]
+        p = run.delay(command)
+        session['celeryid'] = p.id
 
-        if file and allowed_file(file.filename):
-            salt = ''.join(random.choice(string.ascii_lowercase + string.digits) for x in range(12))
-            os.mkdir(os.path.join(app.config['UPLOAD_FOLDER'], salt))
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], salt, filename))
-            filename = os.path.join(app.config['UPLOAD_FOLDER'], salt, filename)
-            flash(u"{0} was uploaded successfully!".format(filename))
-            session['output'] = os.path.join(app.config['UPLOAD_FOLDER'], salt)
-            session['build'] = request.form['build']
-            command = [perl, tripodPath,
-                       '--gender=' + request.form['gender'],
-                       '--graph=png',
-                       '--alpha=' + request.form['alpha'],
-                       '--build=' + os.path.join(config.get('paths','install'),request.form['build']),
-                       '--' + request.form['pod'], 
-                       '--' + request.form['podhd'], 
-                       '--' + request.form['podmi1'], 
-                       '--' + request.form['podcr'], 
-                       '--out=' + session['output'],
-                       filename
-            ]
-            p = run.delay(command)
-            session['celeryid'] = p.id
-            
-            return redirect(url_for('status', id=session['celeryid']))
-
-        elif not allowed_file(file.filename):
-            flash(u"File type must be .txt .csv or .tsv", 'error')
-            return redirect(url_for('upload'))
+        return redirect(url_for('progress', id=session['celeryid']))
 
     return render_template('upload.html')
 
@@ -81,50 +86,90 @@ def status(id):
     """ Wait until the job is finished and report success."""
     result = AsyncResult(id, app=celery)
     while not result.ready():
-        time.sleep(2)
-    return redirect(url_for('results'))
+        if result.failed():
+            flash(u"error running triPOD. please check {0}".format(session['filename']),'error')
+            return redirect(url_for('upload'))
+        time.sleep(5)
+    return url_for('results')
     
 @app.route('/results')
 def results():
     """ Format the final results page and return template."""
-    outdir = os.listdir(session['output'])
+    outdir = session['out']
+    outdirList = os.listdir(outdir)
     png = re.compile("png$")
-    txt = re.compile("txt$")
+    txt = re.compile("triPOD_Results.txt$")
     bed = re.compile("bed$")
     images = []
-    for file in outdir:
+    for file in outdirList:
+        if re.search(png, file):
+            images.append(os.path.join(file))
+        elif re.search(txt, file):
+            session['txt'] = file
+            with open(os.path.join(outdir, file), 'r') as txtfile:
+                table = extract_table(txtfile)
+        elif re.search(bed, file):
+            session['bed'] = file
+        else:
+            continue
+
+    return render_template('results.html', 
+                           filename=os.path.basename(session['filename']),
+                           ucsc=os.path.basename(session['out']),
+                           table=table,
+                           tablerange=range(0,len(table['Sample']) + 1))
+
+@app.route('/data/<file>')
+def data(file):
+    """ Return requested file to results page """
+    if file == 'txt':
+        return send_from_directory(session['out'],session['txt'])
+    elif file == 'bed':
+        return send_from_directory(session['out'],session['bed'])
+
+@app.route('/external/<id>/<filename>')
+def external(id, filename):
+    """ Return results independently of session data
+    id = upload path directory """
+    outdir = os.path.join(app.config['UPLOAD_FOLDER'],id)
+    outdirList = os.listdir(outdir)
+    png = re.compile("png$")
+    txt = re.compile("triPOD_Results.txt$")
+    bed = re.compile("bed$")
+    images = []
+    for file in outdirList:
         if re.search(png, file):
             images.append(file)
         elif re.search(txt, file):
-            txtResults = file
+            txt = file
         elif re.search(bed, file):
-            bedResults = item
+            bed = file
         else:
             continue
-    table = open(session['output'] + '/' + txtResults, 'r+')
-    txtTable = table.read().splitlines()
-    del txtTable[0:6] # remove before table
-    table.close()
-    for _ in range(4):
-        del txtTable[-1] #remove after table
-    splitTable = [line.split() for line in txtTable]
-    headerTable = splitTable.pop(0)
-    chroms = list([int(i[1]) for i in splitTable])
-    uniqChroms = list(set(chroms))
-    freqs = [(i, chroms.count(i)) for i in uniqChroms]
-    # Find the largest anomaly detected, so we can pass coords to UCSC
-    starts = list([int(i[2]) for i in splitTable])
-    ends = list([int(i[3]) for i in splitTable])
-    bp = list([int(i[8]) for i in splitTable])
-    maxBp = max(bp)
-    maxIndex = bp.index(maxBp)
-    maxStart = starts[maxIndex]
-    maxEnd = ends[maxIndex]
-    maxChr = chroms[maxIndex]
-    ucscPos = 'chr' + str(maxChr) + ':' + str(maxStart) + '-' + str(maxEnd)
-    ucscURL = outdir + '/' + bedResults
 
-    return render_template('results.html', filename, txtResults, bedResults, build, ucscPos, ucscURL)
+    if filename == 'txt':
+        return send_from_directory(os.path.join(app.config['UPLOAD_FOLDER'],id),txt)
+    elif filename == 'bed':
+        return send_from_directory(os.path.join(app.config['UPLOAD_FOLDER'],id),bed)
+    
+def extract_table(txt):
+    """ Extract the useful parts of the text table from triPOD output """
+    for line in txt:
+        line = line.split()
+        if line == []:
+            continue
+        elif line[0] == "Sample":
+            table = OrderedDict((k,[]) for k in line)
+            break
+    for line in txt:
+        line = line.split()
+        if line == []:
+            break
+        else:
+            for k, v in zip(table.keys(), line):
+                table[k].append(v)
+    return table
+    
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

@@ -2,6 +2,7 @@
 <title>triPOD</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+{% block body %}{% endblock %}
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     <a class=flashes>
@@ -11,4 +12,3 @@
     </a>
   {% endif %}
 {% endwith %}
-{% block body %}{% endblock %}
