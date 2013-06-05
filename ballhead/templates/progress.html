@@ -4,7 +4,7 @@
 <h2>triPOD analysis on {{ session['filename'] }}</h2>
 <script>
 function wait_for_update() {
-    $.ajax({ url: '/status/{{ id }}',
+    $.ajax({ url: '{{ url_for('status', id=id) }}',
 	     success: redirect,
 	     dataType: "text",
              complete: wait_for_update,
@@ -12,7 +12,7 @@ function wait_for_update() {
 }
 
 function redirect() {
-    window.location.replace('/results');
+    window.location.replace({{ url_for('status', id=id) }});
 }
 wait_for_update();
 </script>
