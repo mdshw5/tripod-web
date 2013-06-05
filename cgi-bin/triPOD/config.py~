@@ -1,9 +1,0 @@
-# Change these options to match system values
-_HTML_ROOT = '/home/httpd/html'
-_CGI_ROOT = '/home/httpd/cgi-bin'
-_APACHE_ROOT = '/home/httpd/html/triPOD/results/'
-_APACHE_URL = 'http://pevsnerlab.kennedykrieger.org/'
-_PERL_PATH = '/usr/bin/perl'
-_PYTHON_PATH = '/usr/bin/python26'
-_AUTH_URL = 'http://review:testing@pevsnerlab.kennedykrieger.org/'
-_CORES = 2
