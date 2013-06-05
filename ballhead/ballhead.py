@@ -3,6 +3,7 @@ import random
 import re
 import string
 import time
+from PIL import Image
 from collections import OrderedDict
 import ConfigParser
 from flask import Flask, flash, request, redirect, url_for, render_template, session, escape, Response, send_from_directory
@@ -146,6 +147,8 @@ def external(id, filename):
         else:
             continue
 
+    bulkResize(outdir, 22)
+
     if filename == 'txt':
         return send_from_directory(os.path.join(app.config['UPLOAD_FOLDER'],id),txt)
     elif filename == 'bed':
@@ -169,6 +172,22 @@ def extract_table(txt):
                 table[k].append(v)
     return table
     
+def resize(folder, fileName, factor):
+    filePath = os.path.join(folder, fileName)
+    im = Image.open(filePath)
+    w, h  = im.size
+    newIm = im.resize((int(w*factor), int(h*factor)))
+    newIm.save(filePath)
+
+def bulkResize(imageFolder, factor):
+    imgExts = ["png", "bmp", "jpg"]
+    for path, dirs, files in os.walk(imageFolder):
+        for fileName in files:
+            ext = fileName[-3:].lower()
+            if ext not in imgExts:
+                continue
+
+            resize(path, fileName, factor)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
