@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
 {% block body %}
+<script src="{{ url_for('static', filename='lightbox.js') }}"></script>
+<link href="{{ url_for('static', filename='lightbox.css') }}" rel="stylesheet" />
 <h1>Results</h1>
 <h2>Regions detected in {{ filename }}</h2>
+<a href="{{ url_for('upload') }}">Back to upload</a>
 <p><div id="results">
   [<a href='{{ url_for('data', file='txt') }}'>txt</a>]
   [<a href='{{ url_for('data', file='bed') }}'>bed</a>]
@@ -22,5 +25,11 @@
   </tr>
 {% endfor %}
 </table>
+<div>
+{% for image in images %}
+<a href="{{ url_for('data', file=image) }}" rel="lightbox" title="{{ image }}" target="_new">
+<img width="150" alt="{{ image }}" src="{{ url_for('data', file=image) }}"/>
+</a>
+{% endfor %}
 </div>
 {% endblock %}

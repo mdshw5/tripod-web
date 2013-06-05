@@ -1,24 +1,29 @@
 {% extends "layout.html" %}
 {% block body %}
 <script src="{{ url_for("static", filename="upload.js") }}"></script>
+<div id="container">
+  <div class="left">
+  <a href="{{ url_for('index') }}"> 
+    <img src="{{ url_for('static', filename='tripod-icon-large.png') }}"/>
+  </a>
+  </div>
+  <div class="inner">
 <h1>Upload</h1>
+<h2>Select a triPOD formatted input file</h2>
 <form id="options" enctype="multipart/form-data" action="" method=post> 
 <table class="table">
 
 <tr class="rowcommon"> 
-<td class="cell1 cell1width">Step 1</td> 
 <td class="cell2 cell2width">Select a file to upload</td> 
-<td class="cell2"><input type="file" name="file" size="25"><br><input type="checkbox" name="sampledata" value="Use">Use sample data</td> 
+<td class="cell2"><input type="file" name="file" size="25">
 </tr> 
 
 <tr class="rowcommon"> 
-<td class="cell1 cell1width">Step 2</td> 
 <td class="cell2 cell2width">Statistical significance threshold for p-value</td> 
 <td class="cell2"><input name="alpha"  type="text" size="10" value="0.1"></td> 
 </tr> 
 
 <tr class="rowcommon"> 
-<td class="cell1 cell1width">Step 3</td> 
 <td class="cell2 cell2width">Reference genome build</td> 
 <td class="cell2"> 
 <select name="build"> 
@@ -31,7 +36,6 @@
 </tr> 
 
 <tr class="rowcommon"> 
-<td class="cell1 cell1width">Step 4</td> 
 <td class="cell2 cell2width">Gender of sample</td> 
 <td class="cell2"> 
 <select name="gender"> 
@@ -43,7 +47,6 @@
 </tr> 
 
 <tr class="rowcommon"> 
-<td class="cell1 cell1width">Step 5</td> 
 <td class="cell2 cell2width">Submit query. Note that large files will take some time to upload.</td> 
 <td class="cell2"><input id="submit" type=submit value=Upload></td> 
 </tr>  
@@ -51,7 +54,6 @@
 <div id="submitted"><p><a>File upload is in progress. Please wait.</a></div>
 
 <tr class="rowcommon">
-<td class="cell1 cell1width">(optional) Detection Methods</td> 
 <td class="cell2 cell2width">Changing the detection methods used will alter your results.</td>
 <td class="cell2">
 <a href="#" id="show_hide">Show/Hide detection methods</a>
@@ -111,4 +113,25 @@
 </div>
 
 </form> 
+<p><p><p>
+  <section id="description">
+  <a class="subtle">This software program detects chromosomal abnormalities in parent-child trio-based microarray data. It has been shown to provide improved sensitivity for abnormality detection, with substantial improvement in detection of low-level mosaic abnormalities, as described in </a><a class="subtle" href="http://www.biomedcentral.com/1471-2164/14/367/">Joseph D. Baugher, Benjamin D. Baugher, Matthew D. Shirley, and Jonathan Pevsner. Sensitive and specific detection of mosaic chromosomal abnormalities using the Parent-of-Origin-based Detection (POD) method. BMC Genomics 2013.</a>
+  </section>
+  <p>
+    <h2>Input file formatting</h2>
+    <p>
+  <section id="formatting">
+    <a class="subtle">The input file must be tab delimited, sorted by chromosome and position, and in the following order (columns):</a>
+    <pre>SNP_Name  Chromosome  Position  Father.GType  Father.BAF  Father.LRR  
+  Mother.GType  Mother.BAF  Mother.LRR  Child.GType Child.BAF Child.LRR</pre>
+    <a class="subtle">A header line is expected and is used to extract sample names (i.e. Sample1.GType = Sample1), but not to determine column identity. Download sample data </a><a href="{{ url_for('static',filename='sampledata.txt') }}">here.</a>
+    <p>
+    <h3>Genotype formatting</h3>
+    <p>
+    <a class="subtle">The genotypes must be AA, AB, BB, NC (or NoCall).
+triPOD has been developed using genotypes annotated by the Illumina method described in "TOP/BOT" Strand and "A/B" Allele. If converting from HapMap format (ATCG) to Illumina format (AB), use simple replacement as follows:</a>
+    <pre>AA = AA, TT; BB = CC, GG; AB = AC, AG, TC, TG; -- = NC. </pre>
+  </section>
+  </div>
+</div>
 {% endblock %}

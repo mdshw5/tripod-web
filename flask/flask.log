@@ -1,0 +1,532 @@
+ * Running on http://0.0.0.0:5000/
+ * Restarting with reloader
+24.126.104.82 - - [04/Jun/2013 20:59:55] "GET / HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:00:18] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:01:51] "POST /upload HTTP/1.1" 400 -
+ * Detected change in 'ballHead.py', reloading
+ * Restarting with reloader
+24.126.104.82 - - [04/Jun/2013 21:03:57] "POST /upload HTTP/1.1" 400 -
+ * Detected change in 'ballHead.py', reloading
+ * Restarting with reloader
+24.126.104.82 - - [04/Jun/2013 21:04:58] "POST /upload HTTP/1.1" 400 -
+ * Detected change in 'ballHead.py', reloading
+ * Restarting with reloader
+24.126.104.82 - - [04/Jun/2013 21:06:23] "POST /upload HTTP/1.1" 302 -
+24.126.104.82 - - [04/Jun/2013 21:06:23] "GET /progress/ad7bf941-780f-42e3-be2a-5c7d2ce53fdc HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:09:29] "GET /status/ad7bf941-780f-42e3-be2a-5c7d2ce53fdc HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:09:29] "GET /status/ad7bf941-780f-42e3-be2a-5c7d2ce53fdc HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:09:29] "GET /status/ad7bf941-780f-42e3-be2a-5c7d2ce53fdc HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:09:29] "GET /status/ad7bf941-780f-42e3-be2a-5c7d2ce53fdc HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:09:29] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:16:19] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:16:19] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:16:19] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:17:03] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:17:03] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:17:03] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:17:41] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:17:41] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:17:41] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:18:35] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:18:35] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:18:35] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:18:41] "GET / HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:19:07] "GET / HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:19:07] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:19:07] "GET /static/tripod-icon-large.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:19:07] "GET /static/tripod-icon.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:19:07] "GET /static/octocat-icon.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:19:11] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:20:25] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:20:25] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:20:25] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:20:50] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:20:50] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:20:50] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:21:34] "GET / HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:21:34] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:21:34] "GET /static/tripod-icon-large.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:21:34] "GET /static/tripod-icon.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:21:34] "GET /static/octocat-icon.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:21:40] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:23:18] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:23:18] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:23:18] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:26:13] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:26:13] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:26:13] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:27:14] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:27:14] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:27:14] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:27:54] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:27:54] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:27:54] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:28:48] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:28:48] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:28:48] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:28:58] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:28:59] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:28:59] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:29:08] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:29:08] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:29:08] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:29:22] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:29:22] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:29:22] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:30:02] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:30:02] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:30:02] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:31:02] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:31:02] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:31:02] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:31:41] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:31:42] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:31:42] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:32:10] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:32:10] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:32:10] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:32:19] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:32:19] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:32:19] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:32:27] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:32:27] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:32:27] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:32:37] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:32:37] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:32:37] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:33:13] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:33:13] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:33:13] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:33:43] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:33:44] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:33:44] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:36:48] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:36:48] "GET /static/style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:36:48] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:37:09] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:37:09] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:37:09] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:37:56] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:37:56] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:37:56] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:38:22] "GET / HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:41:20] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:42:03] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:42:03] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:42:03] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:42:03] "GET /static/tripod-icon-large.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:44:54] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:44:54] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:44:54] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:44:54] "GET /static/tripod-icon-large.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 21:44:56] "GET / HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:45:03] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:45:59] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:57:51] "GET /results HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1701, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1689, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1687, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1360, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1358, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1344, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/matt/ballhead/flask/ballHead.py", line 116, in results
+    tablerange=range(0,len(table['Sample']) + 1))
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 125, in render_template
+    context, ctx.app)
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 107, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/matt/ballhead/flask/templates/results.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "/home/matt/ballhead/flask/templates/layout.html", line 5, in top-level template code
+    {% block body %}{% endblock %}
+  File "/home/matt/ballhead/flask/templates/results.html", line 5, in block "body"
+    <a href="{{ url_to('upload') }}">Back to upload</a>
+UndefinedError: 'url_to' is undefined
+24.126.104.82 - - [04/Jun/2013 21:57:51] "GET /results?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:57:51] "GET /results?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:57:51] "GET /results?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:57:51] "GET /results?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:57:51] "GET /results?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:57:51] "GET /results?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:58:19] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 21:58:20] "GET /static/style.css HTTP/1.1" 304 -
+ * Detected change in 'ballHead.py', reloading
+ * Restarting with reloader
+24.126.104.82 - - [04/Jun/2013 22:08:07] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:08:07] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:08:07] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:08:07] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:08:07] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:08:08] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:08:08] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:08:08] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:08:08] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:09:37] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:09:37] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:09:37] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:09:37] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:09:37] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:09:37] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:09:37] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:09:37] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:09:38] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+ * Detected change in 'ballHead.py', reloading
+ * Restarting with reloader
+24.126.104.82 - - [04/Jun/2013 22:11:02] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:11:02] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:11:03] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:11:03] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:11:03] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:11:03] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:11:03] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:11:03] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:11:03] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:11:21] "GET / HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:11:24] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:12:18] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:12:18] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:12:18] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:12:18] "GET /static/tripod-icon-large.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:14:38] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:14:39] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:14:39] "GET /static/upload.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:14:39] "GET /static/tripod-icon-large.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:14:43] "GET /static/sampledata.txt HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+24.126.104.82 - - [04/Jun/2013 22:14:52] "GET /static/sampledata.txt HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:15:03] "GET / HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:15:06] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:15:24] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:32:28] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:32:29] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:32:29] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:32:29] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:32:29] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:32:29] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:32:29] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:32:29] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:32:29] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:34:50] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:34:50] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:34:50] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:34:50] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:34:51] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:34:51] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:34:51] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:34:51] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:34:51] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:39:58] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:39:58] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:39:58] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:39:58] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:39:58] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:39:58] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:39:58] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:39:58] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:39:58] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:41:31] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:41:31] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:41:31] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:41:31] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:41:31] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:41:31] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:41:31] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:41:31] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:41:31] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:44:56] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:44:56] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:44:56] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:44:56] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:44:56] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:44:56] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:44:56] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:44:56] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:44:56] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:10] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:45:10] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:10] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:10] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:10] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:10] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:10] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:10] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:10] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:27] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:45:27] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:27] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:27] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:27] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:27] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:27] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:27] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:27] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:47] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:45:48] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:48] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:48] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:48] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:48] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:48] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:48] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:48] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:55] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:45:55] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:55] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:55] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:55] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:55] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:55] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:55] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:45:55] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:46:16] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:46:16] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:46:16] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:46:16] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:46:16] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:46:16] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:46:16] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:46:16] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:46:16] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:30] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:47:30] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:30] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:30] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:30] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:30] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:30] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:30] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:30] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:58] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:47:58] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:58] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:58] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:58] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:58] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:58] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:58] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:47:58] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:49:53] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:49:53] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:49:53] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:49:53] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:49:53] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:49:53] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:49:53] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:49:53] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:49:53] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:57:43] "GET /results HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1701, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1689, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1687, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1360, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1358, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1344, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/matt/ballhead/flask/ballHead.py", line 117, in results
+    tablerange=range(0,len(table['Sample']) + 1))
+  File "/usr/local/lib/python2.7/dist-packages/flask/templating.py", line 124, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 554, in compile
+    self.handle_exception(exc_info, source_hint=source)
+  File "/usr/local/lib/python2.7/dist-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/matt/ballhead/flask/templates/results.html", line 3, in template
+    <script src="{{ url_for('static', filename='lightbox.js' }}"></script>
+TemplateSyntaxError: unexpected '}', expected ')'
+24.126.104.82 - - [04/Jun/2013 22:57:43] "GET /results?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:57:43] "GET /results?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:57:43] "GET /results?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:57:43] "GET /results?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:57:43] "GET /results?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:57:43] "GET /results?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:58:16] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /static/lightbox.css HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /static/lightbox.js HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /images/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 22:58:17] "GET /images/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 22:59:44] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:59:44] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:59:44] "GET /static/lightbox.css HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 22:59:44] "GET /static/lightbox.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:59:45] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:59:45] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:59:45] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:59:45] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:59:45] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:59:45] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:59:45] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 22:59:45] "GET /images/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 22:59:45] "GET /images/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 22:59:49] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:59:50] "GET / HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 22:59:53] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:00:13] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:00:13] "GET /static/lightbox.css HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:00:13] "GET /images/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:00:13] "GET /images/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:00:20] "GET /images/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:00:21] "GET /images/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:00:42] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /static/lightbox.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /static/lightbox.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /images/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:00:43] "GET /images/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:05:44] "GET /upload HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:06:04] "POST /upload HTTP/1.1" 302 -
+24.126.104.82 - - [04/Jun/2013 23:06:04] "GET /progress/271309c1-2684-4596-a2d1-f1c7228ae1ad HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:08:50] "GET /status/271309c1-2684-4596-a2d1-f1c7228ae1ad HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:08:50] "GET /status/271309c1-2684-4596-a2d1-f1c7228ae1ad HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:08:50] "GET /status/271309c1-2684-4596-a2d1-f1c7228ae1ad HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:08:50] "GET /status/271309c1-2684-4596-a2d1-f1c7228ae1ad HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:08:50] "GET /status/271309c1-2684-4596-a2d1-f1c7228ae1ad HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:08:50] "GET /status/271309c1-2684-4596-a2d1-f1c7228ae1ad HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:08:50] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:08:50] "GET /images/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:08:50] "GET /images/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:11:40] "GET /upload HTTP/1.1" 200 -
+ * Detected change in 'ballHead.py', reloading
+----------------------------------------
+Exception happened during processing of request from ('24.126.104.82', 34356)
+----------------------------------------
+ * Restarting with reloader
+24.126.104.82 - - [04/Jun/2013 23:12:02] "POST /upload HTTP/1.1" 302 -
+24.126.104.82 - - [04/Jun/2013 23:12:02] "GET /progress/e3628869-a9e8-43c9-a5ae-df523a7fb3f2 HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:14:43] "GET /status/e3628869-a9e8-43c9-a5ae-df523a7fb3f2 HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:14:43] "GET /status/e3628869-a9e8-43c9-a5ae-df523a7fb3f2 HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:14:43] "GET /status/e3628869-a9e8-43c9-a5ae-df523a7fb3f2 HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:14:43] "GET /status/e3628869-a9e8-43c9-a5ae-df523a7fb3f2 HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:14:43] "GET /status/e3628869-a9e8-43c9-a5ae-df523a7fb3f2 HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:14:43] "GET /status/e3628869-a9e8-43c9-a5ae-df523a7fb3f2 HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:14:43] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:14:44] "GET /images/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:14:44] "GET /images/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:16:00] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:00] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:16:00] "GET /static/lightbox.css HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:00] "GET /static/lightbox.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:16:00] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:00] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:00] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:00] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:00] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:00] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:01] "GET /images/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:16:01] "GET /images/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:16:01] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:05] "GET / HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:09] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:16:09] "GET /images/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:16:09] "GET /images/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:17:43] "GET /static/sampledata.txt HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /static/lightbox.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /static/lightbox.js HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /static/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:18:54] "GET /static/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /static/lightbox.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /static/lightbox.js HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /static/loading.gif HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:19:17] "GET /static/close.png HTTP/1.1" 404 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /results HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /static/style.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /static/lightbox.js HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /static/lightbox.css HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /data/Sim50_Norm_Chr_10.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /data/Sim50_Norm_Chr_13.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /data/Sim50_Norm_Chr_12.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /data/Sim50_Norm_Chr_9.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /data/Sim50_Norm_Chr_17.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /data/Sim50_Norm_Chr_5.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /data/Sim50_Norm_Chr_8.png HTTP/1.1" 304 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /static/close.png HTTP/1.1" 200 -
+24.126.104.82 - - [04/Jun/2013 23:20:42] "GET /static/loading.gif HTTP/1.1" 200 -
+ * Detected change in 'ballHead.py', reloading
+----------------------------------------
+Exception happened during processing of request from ('24.126.104.82', 41973)
+----------------------------------------
+ * Restarting with reloader

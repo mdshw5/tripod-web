@@ -4,10 +4,11 @@ body            { font-family: 'Helvetica Neue', Helvetica, Arial, serif;
 section         { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit;
 		  vertical-align: baseline; display: block;}
 a, h1           { color: #363636; }
-h2              { color: #aaa; }
-h1, h2          { font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif; margin: 0; }
+h2, h3              { color: #476B6B; }
+h1, h2, h3          { font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif; margin: 0; }
 h1              { border-bottom: 2px solid #aaa; }
 h2              { font-size: 1.2em; }
+h3              { font-size: 1em; }
 #container      { background: transparent; min-height: 595px; }
 .left           { width: 248px; float: left; margin: 0 auto;}
 .inner          { width: 620px; float: center; margin: 0 auto; }
@@ -23,7 +24,8 @@ h2              { font-size: 1.2em; }
 .header         { font-weight: bold; font-size: 75%; background: #9BBDD4; }
 .even           { font-size: 75%; background: #F0D6D6; }
 .odd            { font-size: 75%; }
-#description    { line-height: 1.5; }
+#description, #formatting    { line-height: 1.5; }
+.subtle         { color: #7E9797; }
 a.button {
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;                     

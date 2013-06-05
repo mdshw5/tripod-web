@@ -44,19 +44,15 @@ def upload():
         salt = ''.join(random.choice(string.ascii_lowercase + string.digits) for x in range(12))
         os.mkdir(os.path.join(app.config['UPLOAD_FOLDER'], salt))
         session['out'] = os.path.join(app.config['UPLOAD_FOLDER'], salt)
-        if request.form['sampledata'] != "Use":
-            file = request.files['file']
-            if file and allowed_file(file.filename):
-                filename = secure_filename(file.filename)
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], salt, filename))
-                session['filename'] = os.path.join(app.config['UPLOAD_FOLDER'], salt, filename)
-            elif not allowed_file(file.filename):
-                flash(u"File type must be .txt .csv or .tsv", 'error')
-                return redirect(url_for('upload'))
-        elif request.form['sampledata'] == "Use":
-            shutil.copy(sampledata, session['out'])
-            session['filename'] = os.path.join(app.config['UPLOAD_FOLDER'], salt, os.path.basename(sampledata))
-        flash(u"{0} was uploaded successfully!".format(session['filename']))
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], salt, filename))
+            session['filename'] = os.path.join(app.config['UPLOAD_FOLDER'], salt, filename)
+        elif not allowed_file(file.filename):
+            flash(u"File type must be .txt", 'error')
+            return redirect(url_for('upload'))
+        flash(u"{0} was uploaded successfully!".format(os.path.basename(session['filename'])))
         session['build'] = request.form['build']
         command = [perl, tripodPath,
                    '--gender=' + request.form['gender'],
@@ -103,7 +99,7 @@ def results():
     images = []
     for file in outdirList:
         if re.search(png, file):
-            images.append(os.path.join(file))
+            images.append(file)
         elif re.search(txt, file):
             session['txt'] = file
             with open(os.path.join(outdir, file), 'r') as txtfile:
@@ -112,10 +108,12 @@ def results():
             session['bed'] = file
         else:
             continue
+    
 
     return render_template('results.html', 
                            filename=os.path.basename(session['filename']),
                            ucsc=os.path.basename(session['out']),
+                           images=reversed(images),
                            table=table,
                            tablerange=range(0,len(table['Sample']) + 1))
 
@@ -126,6 +124,8 @@ def data(file):
         return send_from_directory(session['out'],session['txt'])
     elif file == 'bed':
         return send_from_directory(session['out'],session['bed'])
+    else:
+        return send_from_directory(session['out'],file)
 
 @app.route('/external/<id>/<filename>')
 def external(id, filename):

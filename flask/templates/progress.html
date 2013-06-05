@@ -1,13 +1,14 @@
 {% extends "layout.html" %}
 {% block body %}
 <h1>Processing</h1>
+<h2>triPOD analysis on {{ session['filename'] }}</h2>
 <script>
 function wait_for_update() {
     $.ajax({ url: '/status/{{ id }}',
 	     success: redirect,
 	     dataType: "text",
              complete: wait_for_update,
-             timeout:  60000 });    
+             timeout:  30000 });    
 }
 
 function redirect() {
@@ -15,5 +16,6 @@ function redirect() {
 }
 wait_for_update();
 </script>
-
+<p>
+<a>This will automatically update when results are ready.</a>
 {% endblock %}

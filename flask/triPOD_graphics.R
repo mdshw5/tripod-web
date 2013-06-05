@@ -105,7 +105,7 @@ PlotAbnChr <- function(chromosome)
   if (graph.output == "png" | graph.output == "both") {
     #Create PNG plot
     png(file = paste(path, "/", child.name, "_Chr_", chromosome, 
-      ".png", sep=""), width=11, height=8.5, units="in", res=300)    
+      ".png", sep=""), width=640, height=480, units="px")    
     par(mfrow=c(3,1), mar=c(0.75, 11, 5, 4),family="sans", fontface="bold", las=0)
 
     plot(curr.data$Pos, curr.data$Child.LRR,
