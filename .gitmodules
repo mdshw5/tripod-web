@@ -1,1 +1,4 @@
 
+[submodule "tripod"]
+	path = tripod
+	url = https://github.com/jdbaugher/tripod.git
