@@ -3,7 +3,6 @@ import random
 import re
 import string
 import time
-import shutil
 from collections import OrderedDict
 import ConfigParser
 from flask import Flask, flash, request, redirect, url_for, render_template, session, escape, Response, send_from_directory
@@ -12,18 +11,18 @@ from celery.result import AsyncResult
 from celery import Celery
 from tasks import *
 
+configPath = '/opt/ballhead/ballhead/default.cfg'
+config = ConfigParser.RawConfigParser()
+config.read(os.path.join(configPath))
+
+perl = config.get('paths', 'perl')
+tripodPath = os.path.join(config.get('paths', 'install'),
+                                       'tripod', 'triPOD.pl')
 celery = Celery()
 celery.config_from_object('celeryconfig')
 
-config = ConfigParser.RawConfigParser()
-config.read(os.path.join(os.getcwd(),'default.cfg'))
-
-perl = config.get('paths', 'perl')
-tripodPath = os.path.join(config.get('paths','install'),'triPOD.pl')
-sampledata = os.path.join(config.get('paths','install'),'sampledata.txt')
-
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = config.get('paths', 'upload')
+app.config['UPLOAD_FOLDER'] = os.path.join(config.get('paths', 'install'), 'upload')
 app.config['MAX_CONTENT_LENGTH'] = config.get('param', 'max_upload')
 app.secret_key = config.get('param', 'secret_key')
 
@@ -58,7 +57,9 @@ def upload():
                    '--gender=' + request.form['gender'],
                    '--graph=png',
                    '--alpha=' + request.form['alpha'],
-                   '--build=' + os.path.join(config.get('paths','install'),request.form['build']),
+                   '--build=' + os.path.join(config.get('paths','install'),
+                                             'ballhead', 'static', 'genome_build',
+                                             request.form['build']),
                    '--' + request.form['pod'], 
                    '--' + request.form['podhd'], 
                    '--' + request.form['podmi1'], 
