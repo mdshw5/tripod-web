@@ -110,8 +110,6 @@ def results():
         else:
             continue
     
-    bulkResize(outdir, 22)
-
     return render_template('results.html', 
                            filename=os.path.basename(session['filename']),
                            ucsc=os.path.basename(session['out']),
