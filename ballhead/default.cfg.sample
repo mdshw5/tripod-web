@@ -1,0 +1,8 @@
+[paths]
+perl = /usr/bin/perl
+upload = /var/www/upload
+
+[param]
+secret_key = super_secret_key
+max_upload = 500 * 1024 * 1024
+pid_mask = 3,3000
