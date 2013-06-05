@@ -10,6 +10,7 @@ Ballhead is a Flask application	for running triPOD analysis. It	utilizes the Cel
 - Python 2.7
     - Flask 0.9
     - Celery 3.0
+    - PIL (Python Image Library)
 - R 2.14
     - shape, TTR, Rscript
 - Apache2
