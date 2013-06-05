@@ -55,6 +55,7 @@ def upload():
         flash(u"{0} was uploaded successfully!".format(os.path.basename(session['filename'])))
         session['build'] = request.form['build']
         command = [perl, tripodPath,
+                   '--cores=2',
                    '--gender=' + request.form['gender'],
                    '--graph=png',
                    '--alpha=' + request.form['alpha'],
@@ -111,6 +112,7 @@ def results():
         else:
             continue
     
+    bulkResize(outdir, 22)
 
     return render_template('results.html', 
                            filename=os.path.basename(session['filename']),
@@ -148,8 +150,6 @@ def external(id, filename):
             bed = file
         else:
             continue
-
-    bulkResize(outdir, 22)
 
     if filename == 'txt':
         return send_from_directory(os.path.join(app.config['UPLOAD_FOLDER'],id),txt)
