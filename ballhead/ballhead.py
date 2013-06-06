@@ -55,7 +55,7 @@ def upload():
             flash(u"File type must be .txt", 'error')
             return redirect(url_for('upload'))
 
-        command = OrderedDict[('bin',perl),
+        command = OrderedDict([('bin',perl),
                    ('script',tripod),
                    ('cores','--cores=2'),
                    ('gender','--gender=' + request.form['gender']),
@@ -71,7 +71,7 @@ def upload():
                    ('podcr','--' + request.form['podcr']),
                    ('out','--out=' + outdir),
                    ('filepath',filepath)
-               ]
+               ])
 
         p = run.delay(command)
         celeryid = p.id
