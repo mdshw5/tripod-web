@@ -132,6 +132,7 @@ def results(id):
     return render_template('results.html', 
                            name=os.path.basename(command['filepath']),
                            build=build,
+                           txtfile=txtfile,
                            bedfile=bedfile,
                            images=reversed(thumbnails),
                            table=table,
