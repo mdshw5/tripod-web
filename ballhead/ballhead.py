@@ -143,7 +143,7 @@ def data(id, file):
     """ Return requested file to results page """
     result = AsyncResult(id, app=celery)
     outdir = command['out'].split('=')[-1]
-    return send_from_directory(outdir,file)
+    return send_from_directory(outdir.rstrip('/'),file)
     
 def extract_table(txt):
     """ Extract the useful parts of the text table from triPOD output """
