@@ -36,4 +36,4 @@ a.button:hover  { display: inline-block; ; background: #85ADAD;
 		  -webkit-box-shadow: 0 8px 0 #959595, 0 12px 10px rgba(0,0,0,.3);
 		  -moz-box-shadow: 0 8px 0 #959595, 0 12px 10px rgba(0,0,0,.3);
 		  box-shadow: 0 8px 0 #959595, 0 12px 10px rgba(0,0,0,.3); }
-a.button span   { padding-left: 50px; display: block; height: 30px; }
+a.button span   { padding-left: 50px; display: block; height: 23px; }
