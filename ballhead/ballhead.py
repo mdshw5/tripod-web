@@ -76,7 +76,7 @@ def upload():
         p = run.delay(command)
         celeryid = p.id
 
-              return redirect(url_for('progress', id=celeryid, name=basename))
+        return redirect(url_for('progress', id=celeryid, name=basename))
 
     return render_template('upload.html')
 
@@ -93,7 +93,7 @@ def status(id):
             flash(u"error running triPOD. please check input file", 'error')
             return redirect(url_for('upload'))
         time.sleep(5)
-              return url_for('results', id=id)
+    return url_for('results', id=id)
     
 @app.route('/results/<id>')
 def results():
@@ -131,7 +131,7 @@ def results():
     
     return render_template('results.html', 
                            name=os.path.basename(command['filepath']),
-                           build=build
+                           build=build,
                            bedfile=bedfile,
                            images=reversed(thumbnails),
                            table=table,
