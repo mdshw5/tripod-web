@@ -125,7 +125,7 @@ def results():
     images = filter(r.search, images)
 
     return render_template('results.html', 
-                           filename=os.path.basename(session['filename']),
+                           name=os.path.basename(session['filename']),
                            ucsc=os.path.basename(session['out']),
                            images=reversed(images),
                            table=table,

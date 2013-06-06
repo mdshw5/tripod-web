@@ -3,8 +3,9 @@
 <script src="{{ url_for('static', filename='lightbox.js') }}"></script>
 <link href="{{ url_for('static', filename='lightbox.css') }}" rel="stylesheet" />
 <h1>Results</h1>
-<h2>Regions detected in {{ filename }}</h2>
-<a href="{{ url_for('upload') }}">Back to upload</a>
+<h2>Regions detected in {{ name }}</h2>
+<a href="{{ url_for('upload') }}" id="run-tripod" class="button"><span style="12px 50% no-repeat;">Return to upload</span></a>
+<hr>
 <p><div id="results">
   [<a href='{{ url_for('data', file='txt') }}'>txt</a>]
   [<a href='{{ url_for('data', file='bed') }}'>bed</a>]

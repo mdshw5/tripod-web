@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
-<h1>Processing</h1>
-<h2>triPOD analysis on {{ name }}</h2>
+<h1>Sample Queued</h1>
+<h2>triPOD analysis of sample: {{ name }}</h2>
+<hr>
 <script>
 function wait_for_update() {
     $.ajax({ url: '{{ url_for('status', id=id) }}',
@@ -17,5 +18,5 @@ function redirect() {
 wait_for_update();
 </script>
 <p>
-<a>This will automatically update when results are ready.</a>
+<a>This page will update when results are ready.</a>
 {% endblock %}
