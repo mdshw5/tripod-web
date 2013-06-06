@@ -26,9 +26,11 @@ h3              { font-size: 1em; }
 .odd            { font-size: 75%; }
 #description, #formatting    { line-height: 1.5; }
 .subtle         { color: #7E9797; }
-a.button        { display: inline-block; padding: 10px  20px; background: #3194c6;
+a.button        { display: inline-block; ; background: #aaa;
 		  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
-a.button:hover  { display: inline-block; padding: 10px  20px; background: #3194c6;
-		  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; }
-
-a.button span   { padding-left: 50px; display: block; height: 23px; }
+a.button:hover  { display: inline-block; ; background: #bbb;
+		  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; 
+		  -webkit-box-shadow: 0 8px 0 #1a74a1, 0 12px 10px rgba(0,0,0,.3);
+		  -moz-box-shadow: 0 8px 0 #1a74a1, 0 12px 10px rgba(0,0,0,.3);
+		  box-shadow: 0 8px 0 #1a74a1, 0 12px 10px rgba(0,0,0,.3); }
+a.button span   { padding-left: 50px; display: block; height: 20px; }
