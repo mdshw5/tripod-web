@@ -32,4 +32,4 @@ a.button        { display: inline-block; background: #BABABA; padding: 10px 10px
 a.button:hover  { display: inline-block; ; background: #85ADAD; padding: 10px 10px;
 		  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;
 		  box-shadow: 0 4px 0 #959595, 0 8px 6px rgba(0,0,0,.3); }
-a.button span   { display: block; height: 23px; }
+a.button span   { display: block; height: 20px; }
