@@ -9,7 +9,7 @@
 <p><div id="results">
   [<a href='{{ url_for('data', file='txt') }}'>txt</a>]
   [<a href='{{ url_for('data', file='bed') }}'>bed</a>]
-  [<a href="http://genome.ucsc.edu/cgi-bin/hgTracks?db={{ session['build'].split('_')[0] }}&org=human&hgt.customText={{ url_for('external', id=ucsc, filename='bed', _external=True) }}" target="_blank">UCSC Browser</a>]
+  [<a href="http://genome.ucsc.edu/cgi-bin/hgTracks?db={{ build }}&org=human&hgt.customText={{ url_for('data', id=id, file=bedfile, _external=True) }}" target="_blank">UCSC Browser</a>]
 </div>
 <p><div id="resultstable">
 <table class="table">
@@ -26,10 +26,10 @@
   </tr>
 {% endfor %}
 </table>
-<div>
+<div class="images">
 {% for image in images %}
-<a href="{{ url_for('data', file=image) }}" rel="lightbox" title="{{ image }}" target="_new">
-<img width="150" alt="{{ image }}" src="{{ url_for('data', file=image) }}"/>
+<a href="{{ url_for('data', id=id, file=image) }}" rel="lightbox" title="{{ image }}" target="_new">
+<img width="150" alt="{{ image }}" src="{{ url_for('data', id=id, file=image) }}"/>
 </a>
 {% endfor %}
 </div>

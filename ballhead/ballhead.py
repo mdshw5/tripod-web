@@ -17,7 +17,7 @@ config = ConfigParser.RawConfigParser()
 config.read(os.path.join(configPath))
 
 perl = config.get('paths', 'perl')
-tripodPath = os.path.join(config.get('paths', 'install'),
+tripod = os.path.join(config.get('paths', 'install'),
                                        'tripod', 'triPOD.pl')
 celery = Celery()
 celery.config_from_object('celeryconfig')
@@ -42,41 +42,47 @@ def upload():
     """
     if request.method == 'POST':
         salt = ''.join(random.choice(string.ascii_lowercase + string.digits) for x in range(12))
-        os.mkdir(os.path.join(app.config['UPLOAD_FOLDER'], salt))
-        session['out'] = os.path.join(app.config['UPLOAD_FOLDER'], salt)
+        outdir = os.path.join(app.config['UPLOAD_FOLDER'], salt)
+        os.mkdir(outdir)
         file = request.files['file']
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], salt, filename))
-            session['filename'] = os.path.join(app.config['UPLOAD_FOLDER'], salt, filename)
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], salt, filename)
+            file.save(filepath)
+            basename = os.path.basename(filepath)
+            flash(u"{0} was uploaded successfully!".format(basename))
         elif not allowed_file(file.filename):
             flash(u"File type must be .txt", 'error')
             return redirect(url_for('upload'))
-        flash(u"{0} was uploaded successfully!".format(os.path.basename(session['filename'])))
-        session['build'] = request.form['build']
-        command = [perl, tripodPath,
-                   '--cores=2',
-                   '--gender=' + request.form['gender'],
-                   '--graph=png',
-                   '--alpha=' + request.form['alpha'],
-                   '--build=' + os.path.join(config.get('paths', 'install'), 'ballhead', 'static', request.form['build']),
-                   '--' + request.form['pod'], 
-                   '--' + request.form['podhd'], 
-                   '--' + request.form['podmi1'], 
-                   '--' + request.form['podcr'], 
-                   '--out=' + session['out'],
-                   session['filename']
-        ]
-        p = run.delay(command)
-        session['celeryid'] = p.id
 
-        return redirect(url_for('progress', id=session['celeryid']))
+        command = OrderedDict[('bin',perl),
+                   ('script',tripod),
+                   ('cores','--cores=2'),
+                   ('gender','--gender=' + request.form['gender']),
+                   ('graphics','--graph=png'),
+                   ('alpha','--alpha=' + request.form['alpha']),
+                   ('build','--build=' + os.path.join(config.get('paths', 'install'), 
+                                                     'ballhead', 
+                                                     'static', 
+                                                     request.form['build'])),
+                   ('pod','--' + request.form['pod']), 
+                   ('podhd','--' + request.form['podhd']),
+                   ('podmi1','--' + request.form['podmi1']), 
+                   ('podcr','--' + request.form['podcr']),
+                   ('out','--out=' + outdir),
+                   ('filepath',filepath)
+               ]
+
+        p = run.delay(command)
+        celeryid = p.id
+
+              return redirect(url_for('progress', id=celeryid, name=basename))
 
     return render_template('upload.html')
 
 @app.route('/progress/<id>')
 def progress(id):
-    return render_template('progress.html', id=id, name=os.path.basename(session['filename']))
+              return render_template('progress.html', id=id, name=name)
 
 @app.route('/status/<id>')
 def status(id):
@@ -84,87 +90,59 @@ def status(id):
     result = AsyncResult(id, app=celery)
     while not result.ready():
         if result.failed():
-            flash(u"error running triPOD. please check {0}".format(session['filename']),'error')
+            flash(u"error running triPOD. please check input file", 'error')
             return redirect(url_for('upload'))
         time.sleep(5)
-    return url_for('results')
+              return url_for('results', id=id)
     
-@app.route('/results')
+@app.route('/results/<id>')
 def results():
+    result = AsyncResult(id, app=celery)
     """ Format the final results page and return template."""
-    outdir = session['out']
-    outdirList = os.listdir(outdir)
+    command = result.get()[0]
+    outdir = command['out'].split('=')[-1]
+
+    if not any([re.search('.resize.png', file) for file in os.listdir(outdir)]):
+        bulkResize(outdir, width=640, height=480)
+
     png = re.compile("png$")
     txt = re.compile("triPOD_Results.txt$")
     bed = re.compile("bed$")
-    images = []
-    for file in outdirList:
-        if re.search(png, file):
-            images.append(file)
-        elif re.search(txt, file):
-            session['txt'] = file
-            with open(os.path.join(outdir, file), 'r') as txtfile:
-                table = extract_table(txtfile)
-        elif re.search(bed, file):
-            session['bed'] = file
-        else:
-            continue
 
-    if not any([re.search('.resize.png', image) for image in images]):
-        bulkResize(outdir, width=640, height=480)
-
-    outdirList = os.listdir(outdir)
     images = []
-    for file in outdirList:
-        if re.search(png, file):
-            images.append(file)
-        else:
-            continue
+    for path, dirs, files in os.walk(outdir):
+        for file in files:
+            if re.search(png, file):
+                images.append(file)
+            elif re.search(txt, file):
+                txtfile = file
+                with open(os.path.join(outdir, file), 'r') as f:
+                    table = extract_table(f)
+            elif re.search(bed, file):
+                bedfile = file
+            else:
+                continue
 
     r = re.compile('resize.png$')
-    images = filter(r.search, images)
+    thumbnails = filter(r.search, images)
 
+    buildfile = command['build'].split('=')[-1]
+    build = os.path.basename(buildfile).split('_')[0]
+    
     return render_template('results.html', 
-                           name=os.path.basename(session['filename']),
-                           ucsc=os.path.basename(session['out']),
-                           images=reversed(images),
+                           name=os.path.basename(command['filepath']),
+                           build=build
+                           bedfile=bedfile,
+                           images=reversed(thumbnails),
                            table=table,
                            tablerange=range(0,len(table['Sample']) + 1))
 
-@app.route('/data/<file>')
-def data(file):
+@app.route('/data/<id>/<file>')
+def data(id, file):
     """ Return requested file to results page """
-    if file == 'txt':
-        return send_from_directory(session['out'],session['txt'])
-    elif file == 'bed':
-        return send_from_directory(session['out'],session['bed'])
-    else:
-        return send_from_directory(session['out'],file)
-
-@app.route('/external/<id>/<filename>')
-def external(id, filename):
-    """ Return results independently of session data
-    id = upload path directory """
-    outdir = os.path.join(app.config['UPLOAD_FOLDER'],id)
-    outdirList = os.listdir(outdir)
-    png = re.compile("png$")
-    txt = re.compile("triPOD_Results.txt$")
-    bed = re.compile("bed$")
-    images = []
-    for file in outdirList:
-        if re.search(png, file):
-            images.append(file)
-        elif re.search(txt, file):
-            txt = file
-        elif re.search(bed, file):
-            bed = file
-        else:
-            continue
-
-    if filename == 'txt':
-        return send_from_directory(os.path.join(app.config['UPLOAD_FOLDER'],id),txt)
-    elif filename == 'bed':
-        return send_from_directory(os.path.join(app.config['UPLOAD_FOLDER'],id),bed)
+    result = AsyncResult(id, app=celery)
+    outdir = command['out'].split('=')[-1]
+    return send_from_directory(outdir,file)
     
 def extract_table(txt):
     """ Extract the useful parts of the text table from triPOD output """

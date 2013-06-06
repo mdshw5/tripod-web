@@ -16,6 +16,8 @@ hr              { border: 0; height: 2px; background: #aaa; margin: 0.5em 0; }
 .footer         { width: 620px; float: left; margin: 10px auto; }
 .table          { width: 100%; border: 0; 
 		  cellpadding: 6; cellspacing: 3; }
+.images         { background: #FFFFFF; padding: 0.5em;
+                  border: 1px solid #AACBE2; }
 .flash          { background: #CEE5F5; padding: 0.5em;
                   border: 1px solid #AACBE2; }
 .error          { background: #F0D6D6; padding: 0.5em; }
