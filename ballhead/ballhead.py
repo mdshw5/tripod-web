@@ -143,6 +143,7 @@ def results(id):
 def data(id, file):
     """ Return requested file to results page """
     result = AsyncResult(id, app=celery)
+    command = result.get()[0]
     outdir = command['out'].split('=')[-1]
     return send_from_directory(outdir,file)
     
