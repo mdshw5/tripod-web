@@ -96,7 +96,7 @@ def status(id):
     return url_for('results', id=id)
     
 @app.route('/results/<id>')
-def results():
+def results(id):
     result = AsyncResult(id, app=celery)
     """ Format the final results page and return template."""
     command = result.get()[0]
