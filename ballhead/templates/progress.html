@@ -13,7 +13,7 @@ function wait_for_update() {
 }
 
 function redirect() {
-    window.location.replace('{{ url_for('results') }}');
+    window.location.replace('{{ url_for('results', id=id) }}');
 }
 wait_for_update();
 </script>
