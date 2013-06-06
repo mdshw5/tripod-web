@@ -1,8 +1,12 @@
 <!doctype html>
-<title>triPOD</title>
+<title>triPOD: Sensitive detection of chromosomal abnormalities in parent-child trio-based microarray data</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 {% block body %}{% endblock %}
+<a>Questions should be directed to: </a><br>
+<a href="mailto:mdshw5@gmail.com">Matthew Shirley</a><a> (web application support)</a><br>
+<a href="mailto:jbaughe2@jhmi.edu">Joseph Baugher</a><a> (perl application support)</a><br>
+<a href="mailto:pevsner@kennedykrieger.org">Jonathan Pevsner</a><a> (general questions)</a><br>
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     <a class=flashes>

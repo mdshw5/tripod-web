@@ -22,8 +22,8 @@ hr              { border: 0; height: 2px; background: #aaa; margin: 0.5em 0; }
 .extras         { background: #F0D6D6; padding: 0.5em; }
 #updated        { background-color: yellow; width: 1.1in; float: right;
                   margin-left: auto; margin-right: auto; }
-.header         { font-weight: bold; font-size: 75%; background: #9BBDD4; }
-.even           { font-size: 75%; background: #F0D6D6; }
+.header         { font-weight: bold; font-size: 75%; background: #85ADAD; }
+.even           { font-size: 75%; background: #BABABA; }
 .odd            { font-size: 75%; }
 #description, #formatting    { line-height: 1.5; }
 .subtle         { color: #7E9797; }
