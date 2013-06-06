@@ -130,7 +130,7 @@ def results(id):
     build = os.path.basename(buildfile).split('_')[0]
     
     return render_template('results.html',
-                           id=id,
+                           id=os.path.basename(outdir),
                            name=os.path.basename(command['filepath']),
                            build=build,
                            txtfile=txtfile,
@@ -142,8 +142,7 @@ def results(id):
 @app.route('/data/<id>/<file>')
 def data(id, file):
     """ Return requested file to results page """
-    result = AsyncResult(id, app=celery)
-    outdir = command['out'].split('=')[-1]
+    outdir = os.path.join(app.config['UPLOAD_FOLDER'],id)
     return send_from_directory(outdir,file)
     
 def extract_table(txt):
