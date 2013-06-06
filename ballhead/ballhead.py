@@ -82,7 +82,7 @@ def upload():
 
 @app.route('/progress/<id>')
 def progress(id):
-              return render_template('progress.html', id=id, name=request.args.get(name))
+              return render_template('progress.html', id=id, name=request.args.get('name'))
 
 @app.route('/status/<id>')
 def status(id):
