@@ -109,7 +109,21 @@ def results():
             session['bed'] = file
         else:
             continue
-    
+
+    if not any([re.search('.resize.png', image) for image in images]):
+        bulkResize(outdir, width=640, height=480)
+
+    outdirList = os.listdir(outdir)
+    images = []
+    for file in outdirList:
+        if re.search(png, file):
+            images.append(file)
+        else:
+            continue
+
+    r = re.compile('resize.png$')
+    images = filter(r.search, images)
+
     return render_template('results.html', 
                            filename=os.path.basename(session['filename']),
                            ucsc=os.path.basename(session['out']),
@@ -170,14 +184,16 @@ def extract_table(txt):
                 table[k].append(v)
     return table
     
-def resize(folder, fileName, factor):
+def resize(folder, fileName, width, height):
+    name, ext = os.path.splitext(fileName)
     filePath = os.path.join(folder, fileName)
-    im = Image.open(filePath)
-    w, h  = im.size
-    newIm = im.resize((int(w*factor), int(h*factor)))
-    newIm.save(filePath)
+    im1 = Image.open(filePath)
+    im = im1.copy()
+    size = width, height
+    im.thumbnail(size, Image.ANTIALIAS)
+    im.save(os.path.join(folder, name) + '.resize.png')
 
-def bulkResize(imageFolder, factor):
+def bulkResize(imageFolder, width, height):
     imgExts = ["png", "bmp", "jpg"]
     for path, dirs, files in os.walk(imageFolder):
         for fileName in files:
@@ -185,7 +201,7 @@ def bulkResize(imageFolder, factor):
             if ext not in imgExts:
                 continue
 
-            resize(path, fileName, factor)
+            resize(path, fileName, width, height)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

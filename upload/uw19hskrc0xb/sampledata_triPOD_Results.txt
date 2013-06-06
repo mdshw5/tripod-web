@@ -1,0 +1,23 @@
+15:21:39 Wed Jun5 2013
+/opt/ballhead/tripod/triPOD.pl --gender=NA --graph=png --alpha=0.1 --build=/opt/ballhead/ballhead/static/hg18_centromeres.txt --pod --nohd --nomi1 --nopodcr --out=/opt/ballhead/upload/uw19hskrc0xb /opt/ballhead/upload/uw19hskrc0xb/sampledata.txt
+triPOD	version 1.2	Author: Joseph D Baugher	jbaughe2(at)jhmi.edu
+
+
+
+Detected Chromosomal Abnormalities
+Sample	Chr	Start	Stop	Type	Parent_of_Origin	Inheritance	Size(SNPs)	Informative_SNPs	Size(bp)	Detection	Median_mBAF	Median_LRR	Father-Median_mBAF	Father-Median_LRR	Mother-Median_mBAF	Mother-Median_LRR
+Sim50_Norm	5	1256437	46384240	UPiD	Mother	NA	9234	1319	45127803	POD	0.7261	-0.0022	0.5014	-0.0021	0.5018	-0.0068
+Sim50_Norm	5	111779937	112522586	DEL	Father	NA	159	74	742649	POD	0.6374	-0.3178	0.5095	0.0124	0.5000	-0.0123
+Sim50_Norm	8	154984	43910848	AMP	Mother	NA	12564	1847	43755864	POD	0.5771	0.0904	0.5000	0.0037	0.5000	-0.0021
+Sim50_Norm	8	128437695	129220171	NA	Mother(C)	NA	220	53	782476	POD	0.5708	0.08807	0.5000	0.0085	0.5024	0.08395
+Sim50_Norm	9	194201	44813196	DEL	Father	NA	11200	1941	44618995	POD	0.6431	-0.1924	0.5055	-0.0108	0.5035	-0.0459
+Sim50_Norm	10	84505800	94829632	DEL	Mother	NA	1989	312	10323832	POD	0.6425	-0.3234	0.5041	-0.0183	0.5008	-0.0123
+Sim50_Norm	12	68102	34711193	AMP	Mother	NA	8269	1129	34643091	POD	0.5763	0.1518	0.5009	-0.0111	0.5005	-0.0267
+Sim50_Norm	12	31790742	132288869	AMP	Mother	NA	19405	2584	100498127	POD	0.5777	0.1512	0.5007	-0.0085	0.5002	-0.0096
+Sim50_Norm	13	31768906	32383476	DEL	Father	NA	80	10	614570	POD	0.5835	-0.3324	0.5249	-0.00795	0.5028	-0.01805
+Sim50_Norm	17	7477252	11738797	UPiD	Father	NA	1145	164	4261545	POD	0.7209	0.01391	0.5000	-0.0131	0.5000	-0.0187
+Sim50_Norm	17	22369739	78629633	UPiD	Father	NA	9709	1678	56259894	POD	0.7258	0.0057	0.5000	-0.0017	0.5003	0.0005
+
+
+PARAMETERS:
+--alpha=0.1 --build=/opt/ballhead/ballhead/static/hg18_centromeres.txt --cores=1 --gender=NA --graph=png --nohd --hetSD=1.41421356237309 --homSD=4 --nomi1 --out=/opt/ballhead/upload/uw19hskrc0xb/ --pod --nc=0.03 --win=100
