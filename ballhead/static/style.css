@@ -26,6 +26,10 @@ h3              { font-size: 1em; }
 .odd            { font-size: 75%; }
 #description, #formatting    { line-height: 1.5; }
 .subtle         { color: #7E9797; }
-a.button        { display: inline-block; background: #BABABA; padding: 10px 10px; }
-a.button:hover  { display: inline-block; ; background: #85ADAD; padding: 10px 10px; }
+a.button        { display: inline-block; background: #BABABA; padding: 10px 10px;
+		  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;
+		  box-shadow: 0 8px 0 #959595, 0 12px 10px rgba(0,0,0,.3); }
+a.button:hover  { display: inline-block; ; background: #85ADAD; padding: 10px 10px;
+		  -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;
+		  box-shadow: 0 8px 0 #959595, 0 12px 10px rgba(0,0,0,.3); }
 a.button span   { display: block; height: 25px; }
