@@ -6,7 +6,7 @@ CELERYD_NODES="w1"
 CELERYD_CHDIR="/opt/ballhead/celery"
 
 # Extra arguments to celeryd
-CELERYD_OPTS="--concurrency=2"
+CELERYD_OPTS="--concurrency=1"
 
 # %n will be replaced with the nodename.
 CELERYD_LOG_FILE="/var/log/celery/%n.log"
