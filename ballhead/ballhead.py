@@ -76,7 +76,7 @@ def upload():
 
 @app.route('/progress/<id>')
 def progress(id):
-    return render_template('progress.html', id=id)
+    return render_template('progress.html', id=id, name=os.path.basename(session['filename']))
 
 @app.route('/status/<id>')
 def status(id):

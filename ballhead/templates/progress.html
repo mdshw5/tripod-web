@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
 <h1>Processing</h1>
-<h2>triPOD analysis on {{ session['filename'] }}</h2>
+<h2>triPOD analysis on {{ name }}</h2>
 <script>
 function wait_for_update() {
     $.ajax({ url: '{{ url_for('status', id=id) }}',
