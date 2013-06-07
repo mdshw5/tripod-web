@@ -10,10 +10,10 @@ h2, h3          { color: #476B6B; }
 h1, h2, h3      { font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif; }
 h2              { font-size: 1.2em; }
 h3              { font-size: 1em; }
-hr              { padding: 2px; border: 0; height: 2px; background: #aaa; }
+hr              { margin: 2px; border: 0; height: 2px; background: #aaa; }
 .container      { background: transparent; min-width: 820px; min-height: 100%;
 		  height: auto; height: 100%; margin: 0 auto -90px; }
-.inner, .header { float: center; margin: 0 auto; }
+.inner, .header { float: left; margin: 0 auto; }
 .push           { clear: both; }
 .footer, .push  { height: 90px; padding: 10px}
 .table          { width: 100%; border: 0; 
