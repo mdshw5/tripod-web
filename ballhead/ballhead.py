@@ -16,14 +16,15 @@ configPath = '/opt/ballhead/ballhead/default.cfg'
 config = ConfigParser.RawConfigParser()
 config.read(os.path.join(configPath))
 
+installpath = config.get('paths', 'install')
 perl = config.get('paths', 'perl')
-tripod = os.path.join(config.get('paths', 'install'),
-                                       'tripod', 'triPOD.pl')
+tripod = os.path.join(installpath,
+                      'tripod', 'triPOD.pl')
 celery = Celery()
 celery.config_from_object('celeryconfig')
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = os.path.join(config.get('paths', 'install'), 'upload')
+app.config['UPLOAD_FOLDER'] = os.path.join(installpath, 'upload')
 app.config['MAX_CONTENT_LENGTH'] = config.get('param', 'max_upload')
 app.secret_key = config.get('param', 'secret_key')
 
@@ -61,7 +62,7 @@ def upload():
                    ('gender','--gender=' + request.form['gender']),
                    ('graphics','--graph=png'),
                    ('alpha','--alpha=' + request.form['alpha']),
-                   ('build','--build=' + os.path.join(config.get('paths', 'install'), 
+                   ('build','--build=' + os.path.join(installpath, 
                                                      'ballhead', 
                                                      'static', 
                                                      request.form['build'])),
@@ -121,7 +122,8 @@ def results(id):
                 f.close()
                 f = open(txtfile, 'w')
                 for line in textresults:
-                    f.write(line.replace(config.get('paths', 'install'), ''))
+                    f.write(line.replace(installpath, ''))
+                f.close()
                 with open(os.path.join(outdir, file), 'r') as f:
                     table = extract_table(f)
             elif re.search(bed, file):
