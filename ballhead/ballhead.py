@@ -100,7 +100,9 @@ def status(id):
 def results(id):
     result = AsyncResult(id, app=celery)
     """ Format the final results page and return template."""
-    command = result.get()[0]
+    command, exitstatus, stdout, stderr = result.get()
+    if exitstatus == '3':
+        flash(u"Please check your input file: {0}".format(stdout), 'error')
     outdir = command['out'].split('=')[-1]
 
     if not any([re.search('.resize.png', file) for file in os.listdir(outdir)]):
@@ -116,13 +118,6 @@ def results(id):
             if re.search(png, file):
                 images.append(file)
             elif re.search(txt, file):
-                f = open(os.path.join(outdir, file), 'r')
-                textresults = f.readlines()
-                f.close()
-                f = open(os.path.join(outdir, file), 'w')
-                for line in textresults:
-                    f.write(line.replace(installpath, ''))
-                f.close()
                 with open(os.path.join(outdir, file), 'r') as f:
                     table = extract_table(f)
                 txtfile = file
