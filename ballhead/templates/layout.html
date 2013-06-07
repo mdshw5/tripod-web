@@ -2,7 +2,14 @@
 <title>triPOD: Sensitive detection of chromosomal abnormalities in parent-child trio-based microarray data</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-{% block body %}{% endblock %}
+
+<div id="container">
+  <div class="left">
+  <a href="{{ url_for('index') }}"> 
+    <img src="{{ url_for('static', filename='tripod-icon-large.png') }}"/>
+  </a>
+  </div>
+  <div class="inner">
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     <a class=flashes>
@@ -12,6 +19,10 @@
     </a>
   {% endif %}
 {% endwith %}
+
+{% block body %}
+{% endblock %}
+  </div>
 <div class="footer">
   <a class="subtle">Questions should be directed to: </a><br>
   <a class="subtle" href="mailto:mdshw5@gmail.com">Matthew Shirley</a>
@@ -21,3 +32,5 @@
   <a class="subtle" href="mailto:pevsner@kennedykrieger.org">Jonathan Pevsner</a>
   <a class="subtle"> (general questions)</a><br>
 </div>
+</div>
+
