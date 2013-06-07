@@ -10,7 +10,7 @@ h2, h3          { color: #476B6B; }
 h1, h2, h3      { font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif; }
 h2              { font-size: 1.2em; }
 h3              { font-size: 1em; }
-hr              { border: 0; height: 2px; background: #aaa; }
+hr              { padding: 2px; border: 0; height: 2px; background: #aaa; }
 .container      { background: transparent; min-width: 820px; min-height: 100%;
 		  height: auto; height: 100%; margin: 0 auto -90px; }
 .inner, .header { width: 620px; float: center; margin: 0 auto; }
