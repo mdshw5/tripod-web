@@ -116,16 +116,16 @@ def results(id):
             if re.search(png, file):
                 images.append(file)
             elif re.search(txt, file):
-                txtfile = file
-                f = open(txtfile, 'r')
+                f = open(os.path.join(outdir, file), 'r')
                 textresults = f.readlines()
                 f.close()
-                f = open(txtfile, 'w')
+                f = open(os.path.join(outdir, file), 'w')
                 for line in textresults:
                     f.write(line.replace(installpath, ''))
                 f.close()
                 with open(os.path.join(outdir, file), 'r') as f:
                     table = extract_table(f)
+                txtfile = file
             elif re.search(bed, file):
                 bedfile = file
             else:
