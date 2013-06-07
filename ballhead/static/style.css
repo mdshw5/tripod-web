@@ -30,7 +30,6 @@ hr              { margin: 2px; border: 0; height: 2px; background: #aaa; }
 .tableheader         { font-weight: bold; font-size: 75%; background: #85ADAD; }
 #updated        { background-color: yellow; width: 1.1in; float: right;
                   margin-left: auto; margin-right: auto; }
-.header         { font-weight: bold; font-size: 75%; background: #85ADAD; }
 .even           { font-size: 75%; background: #BABABA; }
 .odd            { font-size: 75%; }
 #description, #formatting    { line-height: 1.5; }
