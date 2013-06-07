@@ -112,6 +112,7 @@ def results(id):
             for dir in dirs:
                 for file in files:
                     if re.search(log, file):
+                        print os.path.join(path, dir, file)
                         f = open(os.path.join(path, dir, file), 'r')
                         flash(u"Please check your input file: {0}".format(f.readlines()), 'error')
                         f.close()
