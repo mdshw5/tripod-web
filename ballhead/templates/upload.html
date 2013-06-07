@@ -1,9 +1,15 @@
 {% extends "layout.html" %}
 {% block body %}
 <script src="{{ url_for("static", filename="upload.js") }}"></script>
+<div class="header">
+  <a href="{{ url_for('index') }}"> 
+    <img align="left" src="{{ url_for('static', filename='tripod-icon-large.png') }}"/>
+  </a>
 <h1>Upload</h1>
+<hr>
 <h2>Select a triPOD formatted input file</h2>
 <hr>
+</div>
 <form id="options" enctype="multipart/form-data" action="" method=post> 
 <table class="table">
 

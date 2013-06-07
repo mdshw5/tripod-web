@@ -2,7 +2,12 @@
 {% block body %}
 <script src="{{ url_for('static', filename='lightbox.js') }}"></script>
 <link href="{{ url_for('static', filename='lightbox.css') }}" rel="stylesheet" />
+<div class="header">
+  <a href="{{ url_for('index') }}"> 
+    <img align="left" src="{{ url_for('static', filename='tripod-icon-large.png') }}"/>
+  </a>
 <h1>Results</h1>
+<hr>
 <h2>Regions detected in {{ name }}</h2>
 <div>
 <a href="{{ url_for('upload') }}" id="run-tripod" class="button"><span style="12px 50% no-repeat;">Return to upload</span></a>
@@ -11,6 +16,7 @@
 <a href="http://genome.ucsc.edu/cgi-bin/hgTracks?db={{ build }}&org=human&hgt.customText={{ url_for('data', id=id, file=bedfile, _external=True) }}" target="_blank" class="button"><span style="12px 50% no-repeat;">View on UCSC</span></a>
 </div>
 <hr>
+</div>
 <table class="table">
 <tr class="tableheader">
 {% for k in table.keys() %}
