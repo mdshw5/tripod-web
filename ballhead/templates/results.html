@@ -4,14 +4,21 @@
 <link href="{{ url_for('static', filename='lightbox.css') }}" rel="stylesheet" />
 <h1>Results</h1>
 <h2>Regions detected in {{ name }}</h2>
-<a href="{{ url_for('upload') }}" id="run-tripod" class="button"><span style="12px 50% no-repeat;">Return to upload</span></a>
-<hr>
 <p><div id="results">
+<<<<<<< HEAD
   [<a href='{{ url_for('data', id=id, file=txtfile) }}'>txt</a>]
   [<a href='{{ url_for('data', id=id, file=bedfile) }}'>bed</a>]
   [<a href="http://genome.ucsc.edu/cgi-bin/hgTracks?db={{ build }}&org=human&hgt.customText={{ url_for('data', id=id, file=bedfile, _external=True) }}" target="_blank">UCSC Browser</a>]
 </div>
 <p><div id="resultstable">
+=======
+<a href="{{ url_for('upload') }}" id="run-tripod" class="button"><span style="12px 50% no-repeat;">Return to upload</span></a>
+<a href="{{ url_for('data', id=id, file=txtfile) }}" class="button"><span style="12px 50% no-repeat;">Download text</span></a>
+<a href="{{ url_for('data', id=id, file=bedfile) }}" class="button"><span style="12px 50% no-repeat;">Download bed</span></a>
+<a href="http://genome.ucsc.edu/cgi-bin/hgTracks?db={{ build }}&org=human&hgt.customText={{ url_for('data', id=id, file=bedfile, _external=True) }}" target="_blank" class="button"><span style="12px 50% no-repeat;">View on UCSC</span></a>
+</div>
+<hr><div id="resultstable">
+>>>>>>> 8781c4a6ed2ce8eb27cc24584a2be78025e13ef3
 <table class="table">
 <tr class="header">
 {% for k in table.keys() %}
