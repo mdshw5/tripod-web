@@ -10,10 +10,10 @@ h1              { border-bottom: 2px solid #aaa; }
 h2              { font-size: 1.2em; }
 h3              { font-size: 1em; }
 hr              { border: 0; height: 2px; background: #aaa; margin: 0.5em 0; }
-#container      { background: transparent; min-width: 870px; }
-.left           { width: 250px; float: left; margin: 0 auto; }
+#container      { background: transparent; min-width: 820px; }
+.left           { width: 200px; float: left; margin: 0 auto; }
 .inner          { width: 620px; float: left; margin: 0 auto; }
-.footer         { width: 620px; float: left; margin: 10px auto; }
+.footer         { float: left; margin: 10px auto; position: fixed; bottom: 0px;}
 .table          { width: 100%; border: 0; 
 		  cellpadding: 6; cellspacing: 3; }
 .images         { background: #FFFFFF; padding: 0.5em;
