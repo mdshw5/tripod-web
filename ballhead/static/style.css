@@ -18,6 +18,7 @@ hr              { border: 0; height: 2px; background: #aaa; margin: 0.5em 0; }
 		  height: auto; height: 100%; margin: 0 auto -90px; }
 .left           { width: 200px; float: left; margin: 0 auto; }
 .inner          { width: 620px; float: left; margin: 0 auto; }
+.push           { clear: both; }
 .footer, .push  { height: 90px; }
 .table          { width: 100%; border: 0; 
 		  cellpadding: 6; cellspacing: 3; }
