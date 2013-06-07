@@ -107,7 +107,7 @@ def results(id):
 
     command, exitstatus, stdout, stderr = result.get()
     outdir = command['out'].split('=')[-1]
-    if exitstatus == '3':
+    if exitstatus > 0:
         for path, dirs, files in os.walk(outdir):
             for file in files:
                 if re.search(log, file):

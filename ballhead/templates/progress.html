@@ -2,6 +2,7 @@
 {% block body %}
 <h1>Sample Queued</h1>
 <h2>triPOD analysis of sample: {{ name }}</h2>
+<a href="{{ url_for('upload') }}" id="run-tripod" class="button"><span style="12px 50% no-repeat;">Return to upload</span></a>
 <hr>
 <script>
 function wait_for_update() {

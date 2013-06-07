@@ -4,7 +4,7 @@
 <link href="{{ url_for('static', filename='lightbox.css') }}" rel="stylesheet" />
 <h1>Results</h1>
 <h2>Regions detected in {{ name }}</h2>
-<p><div>
+<div>
 <a href="{{ url_for('upload') }}" id="run-tripod" class="button"><span style="12px 50% no-repeat;">Return to upload</span></a>
 <a href="{{ url_for('data', id=id, file=txtfile) }}" class="button"><span style="12px 50% no-repeat;">Download text</span></a>
 <a href="{{ url_for('data', id=id, file=bedfile) }}" class="button"><span style="12px 50% no-repeat;">Download bed</span></a>
