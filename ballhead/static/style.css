@@ -13,7 +13,7 @@ h3              { font-size: 1em; }
 hr              { padding: 2px; border: 0; height: 2px; background: #aaa; }
 .container      { background: transparent; min-width: 820px; min-height: 100%;
 		  height: auto; height: 100%; margin: 0 auto -90px; }
-.inner, .header { width: 620px; float: center; margin: 0 auto; }
+.inner, .header { float: center; margin: 0 auto; }
 .push           { clear: both; }
 .footer, .push  { height: 90px; padding: 10px}
 .table          { width: 100%; border: 0; 
@@ -36,4 +36,4 @@ a.button        { display: inline-block; background: #BABABA; padding: 8px;
 a.button:hover  { display: inline-block; ; background: #85ADAD; padding: 8px;
 		  -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px;
 		  box-shadow: 0 4px 0 #959595, 0 6px 6px rgba(0,0,0,.3); }
-a.button span   { display: block; height: 20px; }
+a.button span   { display: block; height: 20px; padding: 2px; }
