@@ -106,6 +106,8 @@ def results(id):
     bed = re.compile("bed$")
 
     command, exitstatus, stdout, stderr = result.get()
+    print exitstatus
+    print stdout
     outdir = command['out'].split('=')[-1]
     if exitstatus > 0:
         for path, dirs, files in os.walk(outdir):
