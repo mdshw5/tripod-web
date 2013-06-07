@@ -113,9 +113,9 @@ def results(id):
         for path, dirs, files in os.walk(outdir):
             for file in files:
                 if re.search(log, file):
-                    print os.path.join(outdir, 'log_files', file)
                     f = open(os.path.join(outdir, 'log_files', file), 'r')
-                    flash(u"Please check your input file: {0}".format(f.readlines()), 'error')
+                    errmesg = ' '.join(f.readlines())
+                    flash(u"Please check your input file: {0}".format(errmesg.rstrip()), 'error')
                     f.close()
                     return redirect(url_for('upload'))
 
