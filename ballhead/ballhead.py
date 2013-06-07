@@ -116,6 +116,12 @@ def results(id):
                 images.append(file)
             elif re.search(txt, file):
                 txtfile = file
+                f = open(txtfile, 'r')
+                textresults = f.readlines()
+                f.close()
+                f = open(txtfile, 'w')
+                for line in textresults:
+                    f.write(line.replace(config.get('paths', 'install'), ''))
                 with open(os.path.join(outdir, file), 'r') as f:
                     table = extract_table(f)
             elif re.search(bed, file):
