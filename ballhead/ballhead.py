@@ -108,12 +108,12 @@ def results(id):
     command, exitstatus, stdout, stderr = result.get()
     outdir = command['out'].split('=')[-1]
     if exitstatus == '3':
-    for path, dirs, files in os.walk(outdir):
-        for file in files:
-            if re.search(log, file):
-                with open(file, 'r') as f:
-                    flash(u"Please check your input file: {0}".format(f.readlines()), 'error')
-                    return redirect(url_for('upload'))
+        for path, dirs, files in os.walk(outdir):
+            for file in files:
+                if re.search(log, file):
+                    with open(file, 'r') as f:
+                        flash(u"Please check your input file: {0}".format(f.readlines()), 'error')
+                        return redirect(url_for('upload'))
 
     if not any([re.search('.resize.png', file) for file in os.listdir(outdir)]):
         bulkResize(outdir, width=640, height=480)
