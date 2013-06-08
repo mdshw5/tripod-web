@@ -1,0 +1,22 @@
+<!doctype html>
+<title>triPOD: Sensitive detection of chromosomal abnormalities in parent-child trio-based microarray data</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+<div id="container">
+  <div class="inner">
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <a class=flashes>
+    {% for category, message in messages %}
+      <p class="{{ category }}"><em>{{ message }}</em>
+    {% endfor %}
+    </a>
+  {% endif %}
+{% endwith %}
+
+{% block body %}
+{% endblock %}
+  </div>
+</div>
+
