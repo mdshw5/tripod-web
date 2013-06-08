@@ -1,25 +1,9 @@
 {% extends "layout.html" %}
 {% block body %}
 <script src="{{ url_for("static", filename="upload.js") }}"></script>
-<<<<<<< HEAD
-<div class="header">
-  <a href="{{ url_for('index') }}"> 
-    <img align="left" src="{{ url_for('static', filename='tripod-icon-large.png') }}"/>
-  </a>
-=======
-<div id="container">
-  <div class="left">
-  <a href="{{ url_for('index') }}"> 
-    <img src="{{ url_for('static', filename='tripod-icon-large.png') }}"/>
-  </a>
-  </div>
-  <div class="inner">
->>>>>>> parent of d44683c... updated layout templates and artwork
 <h1>Upload</h1>
-<hr>
 <h2>Select a triPOD formatted input file</h2>
 <hr>
-</div>
 <form id="options" enctype="multipart/form-data" action="" method=post> 
 <table class="table">
 
@@ -142,6 +126,4 @@
 triPOD has been developed using genotypes annotated by the Illumina method described in "TOP/BOT" Strand and "A/B" Allele. If converting from HapMap format (ATCG) to Illumina format (AB), use simple replacement as follows:</a>
     <pre>AA = AA, TT; BB = CC, GG; AB = AC, AG, TC, TG; -- = NC. </pre>
   </section>
-  </div>
-</div>
 {% endblock %}

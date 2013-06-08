@@ -1,15 +1,9 @@
 {% extends "layout.html" %}
 {% block body %}
-<div class="header">
-  <a href="{{ url_for('index') }}"> 
-    <img align="left" src="{{ url_for('static', filename='tripod-icon-large.png') }}"/>
-  </a>
 <h1>Sample Queued</h1>
-<hr>
 <h2>triPOD analysis of sample: {{ name }}</h2>
 <a href="{{ url_for('upload') }}" id="run-tripod" class="button"><span style="12px 50% no-repeat;">Return to upload</span></a>
 <hr>
-</div>
 <script>
 function wait_for_update() {
     $.ajax({ url: '{{ url_for('status', id=id) }}',
