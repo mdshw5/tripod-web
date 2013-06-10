@@ -13,7 +13,7 @@ hr              { border: 0; height: 2px; background: #aaa; margin: 0.5em 0; }
 #container      { background: transparent; min-width: 820px; }
 .left           { width: 200px; float: left; margin: 0 auto; }
 .inner          { width: 620px; float: left; margin: 0 auto; }
-.footer         { float: left; margin: 10px auto; position: fixed; bottom: 0px; height: 150px }
+.footer         { float: left; margin: 10px auto; height: 150px }
 .table          { width: 100%; border: 0; 
 		  cellpadding: 6; cellspacing: 3; }
 .images         { background: #FFFFFF; padding: 0.5em;
@@ -28,7 +28,7 @@ hr              { border: 0; height: 2px; background: #aaa; margin: 0.5em 0; }
 .header         { font-weight: bold; font-size: 75%; background: #85ADAD; }
 .even           { font-size: 75%; background: #BABABA; }
 .odd            { font-size: 75%; }
-#description, #formatting    { line-height: 1.5; }
+#description, #formatting, #contact    { line-height: 1.5; }
 .subtle         { color: #7E9797; }
 a.button        { display: inline-block; background: #BABABA; padding: 8px;
 		  -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px;

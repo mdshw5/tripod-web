@@ -12,7 +12,8 @@ from celery.result import AsyncResult
 from celery import Celery
 from tasks import *
 
-configPath = '/opt/ballhead/ballhead/default.cfg'
+configPath = 'default.cfg'
+#configPath = '/opt/ballhead/ballhead/default.cfg'
 config = ConfigParser.RawConfigParser()
 config.read(os.path.join(configPath))
 
@@ -35,6 +36,10 @@ def allowed_file(filename):
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
@@ -116,7 +121,7 @@ def results(id):
                 if re.search(log, file):
                     f = open(os.path.join(outdir, 'log_files', file), 'r')
                     errmesg = ' '.join(f.readlines())
-                    errmesg = [line for lines if re.search(error, line)]
+                    errmesg = [line for lines in re.search(error, line)]
                     flash(u"Please check your input file: {0}".format(errmesg.rstrip()), 'error')
                     f.close()
                     return redirect(url_for('upload'))
