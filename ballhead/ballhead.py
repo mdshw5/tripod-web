@@ -124,6 +124,10 @@ def results(id):
     if exitstatus == 4:
         flash(u"No abnormalities were detected in this analysis.")
 
+    if exitstatus == 5:
+        flash(u"This analysis could not be completed: low quality sample data generated too many errors.", 'error')
+        return redirect(url_for('upload'))
+
     if not any([re.search('.resize.png', file) for file in os.listdir(outdir)]):
         bulkResize(outdir, width=640, height=480)
 
