@@ -104,20 +104,25 @@ def results(id):
     txt = re.compile("triPOD_Results.txt$")
     log = re.compile("triPOD_log.txt$")
     bed = re.compile("bed$")
+    error = re.compile("ERROR")
 
     command, exitstatus, stdout, stderr = result.get()
     print exitstatus
     print stdout
     outdir = command['out'].split('=')[-1]
-    if exitstatus > 0:
+    if exitstatus == 3:
         for path, dirs, files in os.walk(outdir):
             for file in files:
                 if re.search(log, file):
                     f = open(os.path.join(outdir, 'log_files', file), 'r')
                     errmesg = ' '.join(f.readlines())
+                    errmesg = [line for lines if re.search(error, line)]
                     flash(u"Please check your input file: {0}".format(errmesg.rstrip()), 'error')
                     f.close()
                     return redirect(url_for('upload'))
+
+    if exitstatus == 4:
+        flash(u"No abnormalities were detected in this analysis.")
 
     if not any([re.search('.resize.png', file) for file in os.listdir(outdir)]):
         bulkResize(outdir, width=640, height=480)
