@@ -62,22 +62,23 @@ def upload():
             return redirect(url_for('upload'))
 
         command = OrderedDict([('bin',perl),
-                   ('script',tripod),
-                   ('cores','--cores=2'),
-                   ('gender','--gender=' + request.form['gender']),
-                   ('graphics','--graph=png'),
-                   ('alpha','--alpha=' + request.form['alpha']),
-                   ('build','--build=' + os.path.join(installpath, 
-                                                     'ballhead', 
-                                                     'static', 
-                                                     request.form['build'])),
-                   ('pod','--' + request.form['pod']), 
-                   ('podhd','--' + request.form['podhd']),
-                   ('podmi1','--' + request.form['podmi1']), 
-                   ('podcr','--' + request.form['podcr']),
-                   ('out','--out=' + outdir),
-                   ('filepath',filepath)
-               ])
+                               ('script',tripod),
+                               ('cores','--cores=2'),
+                               ('gender','--gender=' + request.form['gender']),
+                               ('graphics','--graph=png'),
+                               ('alpha','--alpha=' + request.form['alpha']),
+                               ('build','--build=' + os.path.join(installpath, 
+                                                                  'ballhead', 
+                                                                  'static', 
+                                                                  request.form['build'])),
+                               ('nocall','--nc=' + request.form['nocall']),
+                               ('pod','--' + request.form['pod']), 
+                               ('podhd','--' + request.form['podhd']),
+                               ('podmi1','--' + request.form['podmi1']), 
+                               ('podcr','--' + request.form['podcr']),
+                               ('out','--out=' + outdir),
+                               ('filepath',filepath)
+                           ])
 
         p = run.delay(command)
         celeryid = p.id
