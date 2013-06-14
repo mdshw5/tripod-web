@@ -112,17 +112,12 @@ def results(id):
     error = re.compile("ERROR")
 
     command, exitstatus, stdout, stderr = result.get()
+    stdout = stdout.split()
     outdir = command['out'].split('=')[-1]
     if exitstatus == 25:
-        for path, dirs, files in os.walk(outdir):
-            for file in files:
-                if re.search(log, file):
-                    f = open(os.path.join(outdir, 'log_files', file), 'r')
-                    errmesg = ' '.join(f.readlines())
-                    errmesg = [line for lines in re.search(error, line)]
-                    flash(u"Please check your input file: {0}".format(errmesg.rstrip()), 'error')
-                    f.close()
-                    return redirect(url_for('upload'))
+        errmesg = [m.group() for l in stdout for m in [re.search(error,l)] if m]
+        flash(u"Please check your input file: {0}".format(errmesg.rstrip()), 'error')
+        return redirect(url_for('upload'))
 
     if exitstatus == 4:
         flash(u"No abnormalities were detected in this analysis.")
