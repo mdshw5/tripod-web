@@ -112,10 +112,8 @@ def results(id):
     error = re.compile("ERROR")
 
     command, exitstatus, stdout, stderr = result.get()
-    print exitstatus
-    print stdout
     outdir = command['out'].split('=')[-1]
-    if exitstatus == 3:
+    if exitstatus == 25:
         for path, dirs, files in os.walk(outdir):
             for file in files:
                 if re.search(log, file):
