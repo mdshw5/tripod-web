@@ -109,14 +109,14 @@ def results(id):
     txt = re.compile("triPOD_Results.txt$")
     log = re.compile("triPOD_log.txt$")
     bed = re.compile("bed$")
-    error = re.compile("ERROR")
+    error = re.compile("FAILED.+")
 
     command, exitstatus, stdout, stderr = result.get()
-    stdout = stdout.split()
+    stdout = stdout.split('\n')
     outdir = command['out'].split('=')[-1]
-    if exitstatus == 25:
-        errmesg = [m.group() for l in stdout for m in [re.search(error,l)] if m]
-        flash(u"Please check your input file: {0}".format(errmesg.rstrip()), 'error')
+    if exitstatus == 3:
+        errmesg = ' '.join([m.group() for l in stdout for m in [re.search(error,l)] if m])
+        flash(u"Please check your input file: {0}".format(errmesg), 'error')
         return redirect(url_for('upload'))
 
     if exitstatus == 4:
