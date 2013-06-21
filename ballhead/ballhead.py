@@ -12,10 +12,12 @@ from celery.result import AsyncResult
 from celery import Celery
 from tasks import *
 
-configPath = 'default.cfg'
-#configPath = '/opt/ballhead/ballhead/default.cfg'
+configPath = '/opt/ballhead/ballhead/default.cfg'
 config = ConfigParser.RawConfigParser()
-config.read(os.path.join(configPath))
+try:
+    config.read('default.cfg')
+except:
+    config.read(configPath)
 
 installpath = config.get('paths', 'install')
 perl = config.get('paths', 'perl')
