@@ -3,7 +3,7 @@
 CELERYD_NODES="w1"
 
 # Where to chdir at start.
-CELERYD_CHDIR="/opt/ballhead/celery"
+CELERYD_CHDIR="/opt/ballhead/ballhead"
 
 # Extra arguments to celeryd
 CELERYD_OPTS="--concurrency=1"
