@@ -9,6 +9,7 @@ import ConfigParser
 from flask import Flask, flash, request, redirect, url_for, render_template, session, escape, Response, send_from_directory
 from werkzeug import secure_filename
 from celery.result import AsyncResult
+from celery.task.control import inspect
 from celery import Celery
 from tasks import *
 
@@ -99,11 +100,13 @@ def progress(id):
 def status(id):
     """ Wait until the job is finished and report success."""
     result = AsyncResult(id, app=celery)
+    
     while not result.ready():
         if result.failed():
             flash(u"error running triPOD. please check input file", 'error')
             return redirect(url_for('upload'))
-        time.sleep(5)
+        else:
+            return 
     return 'success'
     
 @app.route('/results/<id>')

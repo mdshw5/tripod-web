@@ -1,4 +1,5 @@
 import subprocess
+import time
 from celery import Celery
 from collections import OrderedDict
 
@@ -11,5 +12,7 @@ def run(command):
                          shell=False,
                          stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
+    startTime = time.time()
     stdout, stderr = p.communicate()
-    return (command, p.returncode, stdout, stderr)
+    endTime = time.time()
+    return (command, p.returncode, stdout, stderr, round(endTime - startTime))

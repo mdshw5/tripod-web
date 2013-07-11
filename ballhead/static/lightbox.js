@@ -50,8 +50,8 @@ lightbox = new Lightbox options
   LightboxOptions = (function() {
 
     function LightboxOptions() {
-      this.fileLoadingImage = '/tripod/static/loading.gif';
-      this.fileCloseImage = '/tripod/static/close.png';
+      this.fileLoadingImage = '/static/loading.gif';
+      this.fileCloseImage = '/static/close.png';
       this.resizeDuration = 700;
       this.fadeDuration = 500;
       this.labelImage = "Image";
