@@ -1,33 +1,32 @@
 <!doctype html>
 <title>triPOD: Sensitive detection of chromosomal abnormalities in parent-child trio-based microarray data</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<link rel=stylesheet media="screen" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
 
-<div id="container">
-  <div class="left">
-  <a href="{{ url_for('index') }}"> 
-    <img src="{{ url_for('static', filename='tripod-icon-large.png') }}"/>
-  </a>
-<div id="buttons">
-  <a href="{{ url_for('upload') }}" id="run-tripod" class="button"><span style="12px 50% no-repeat;">Launch triPOD</span></a><p>
-  <a href="http://jdbaugher.github.io/tripod/" class="button"><span style="12px 50% no-repeat;">Download triPOD</span></a><p>
-  <a href="{{ url_for('contact') }}" class="button"><span style="12px 50% no-repeat;">Contact us</span></a>
-
-</div>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <a href="{{ url_for('index') }}"> 
+	<img src="{{ url_for('static', filename='tripod-icon-large.png') }}"/>
+      </a>
+      <ul class="unstyled">
+	<li><a href="{{ url_for('upload') }}"><button style="width:100px" class="btn btn-info">Run now</button></a>
+	<li><a href="http://jdbaugher.github.io/tripod/"><button style="width:100px" class="btn">Download</button></a>
+	<li><a href="{{ url_for('contact') }}"><button style="width:100px" class="btn">Contact us</button></a>
+      </ul>
+    </div><!--/span2 -->
+    <div class="span10">
+      {% for message in get_flashed_messages() %}
+      <div class="alert">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	{{ message }}
+      </div>
+      {% endfor %}
+      {% block body %}
+      {% endblock %}
+    </div><!--/span10 -->
   </div>
-  <div class="inner">
-{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    <a class=flashes>
-    {% for category, message in messages %}
-      <p class="{{ category }}"><em>{{ message }}</em>
-    {% endfor %}
-    </a>
-  {% endif %}
-{% endwith %}
+</div> <!-- /container -->
 
-{% block body %}
-{% endblock %}
-  </div>
-</div>
 

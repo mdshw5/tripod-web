@@ -1,44 +1,43 @@
-{% extends "layout_single.html" %}
+{% extends "layout.html" %}
 {% block body %}
 <script src="{{ url_for('static', filename='lightbox.js') }}"></script>
 <link href="{{ url_for('static', filename='lightbox.css') }}" rel="stylesheet" />
 <h1>Results</h1>
 <h2>Regions detected in {{ name }}</h2>
-<div>
-<a href="{{ url_for('upload') }}" id="run-tripod" class="button"><span style="12px 50% no-repeat;">Return to upload</span></a>
-<a href="{{ url_for('data', id=id, file=txtfile) }}" class="button"><span style="12px 50% no-repeat;">Text format</span></a>
-<a href="{{ url_for('data', id=id, file=bedfile) }}" class="button"><span style="12px 50% no-repeat;">BED format</span></a>
-<a href="http://genome.ucsc.edu/cgi-bin/hgTracks?db={{ build }}&org=human&hgt.customText={{ url_for('data', id=id, file=bedfile, _external=True) }}" target="_blank" class="button"><span style="12px 50% no-repeat;">View on UCSC</span></a>
-<a href="{{ url_for('contact') }}" class="button"><span style="12px 50% no-repeat;">Contact us</span></a>
+<div class="btn-group">
+  <a href="{{ url_for('upload') }}"><button class="btn">Return to upload</button></a>
+  <a href="{{ url_for('data', id=id, file=txtfile) }}"><button class="btn">Text format</button></a>
+  <a href="{{ url_for('data', id=id, file=bedfile) }}"><button class="btn">BED format</button></a>
+  <a href="http://genome.ucsc.edu/cgi-bin/hgTracks?db={{ build }}&org=human&hgt.customText={{ url_for('data', id=id, file=bedfile, _external=True) }}" target="_blank"><button class="btn">View on UCSC</button></a>
 </div>
 <hr>
-<table class="table">
-<tr class="header">
-{% for k in table.keys() %}
-  <td>{{ k.replace('_',' ') }}</td>
-{% endfor %}
-</tr>
-{% for row in tablerange %}
-  <tr class="{{ loop.cycle('odd', 'even') }}">
+<table class="table table-condensed">
+  <thead>
+    {% for k in table.keys() %}
+    <td>{{ k.replace('_',' ') }}</td>
+    {% endfor %}
+  </thead>
+  {% for row in tablerange %}
+  <tr class="{{ loop.cycle('info', '') }}">
     {% for key in table.keys() %}
-      <td>{{ table[key][row] }}</td>
+    <td>{{ table[key][row] }}</td>
     {% endfor %}
   </tr>
-{% endfor %}
+  {% endfor %}
 </table>
 <div class="images">
-{% for image in images %}
-<a href="{{ url_for('data', id=id, file=image) }}" rel="lightbox" title="{{ image }}" target="_new">
-<img width="150" alt="{{ image }}" src="{{ url_for('data', id=id, file=image) }}"/>
-</a>
-{% endfor %}
+  {% for image in images %}
+  <a href="{{ url_for('data', id=id, file=image) }}" rel="lightbox" title="{{ image }}" target="_new">
+    <img width="150" alt="{{ image }}" src="{{ url_for('data', id=id, file=image) }}"/>
+  </a>
+  {% endfor %}
 </div>
-<a>triPOD analysis took {{ timer }} seconds</a>
 <hr>
 <h2>Additional Considerations</h2>
 <hr>
 <ul>
-<li>Care should be taken when interpreting large abnormalities in commonly variable regions due to a tendency to combine small adjacent abnormalities of the same type.</li>
-<li>Interesting findings should be graphically investigated until the user has gained expertise with the strengths and weaknesses of the various detection and annotation methods employed by triPOD.</li>
+  <li>Care should be taken when interpreting large abnormalities in commonly variable regions due to a tendency to combine small adjacent abnormalities of the same type.</li>
+  <li>Interesting findings should be graphically investigated until the user has gained expertise with the strengths and weaknesses of the various detection and annotation methods employed by triPOD.</li>
 </ul>
+<p>triPOD analysis took {{ timer }} seconds
 {% endblock %}

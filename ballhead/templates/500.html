@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block title %}Something broke{% endblock %}
+{% block body %}
+  <h1>An error has just occurred</h1>
+  <p>Lucky you were here to witness it.
+  <p><a href="{{ url_for('index') }}">go somewhere that works?</a>
+  <p>Email mdshw5 'at' gmail 'dot' com if this shouldn't have happened.
+{% endblock %}

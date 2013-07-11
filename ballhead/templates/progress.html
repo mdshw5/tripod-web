@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% block body %}
+<div style="min-width:600px;max-width:600px;">
 <h1>Sample Queued</h1>
 <h2>triPOD analysis of sample: {{ name }}</h2>
-<a href="{{ url_for('upload') }}" id="run-tripod" class="button"><span style="12px 50% no-repeat;">Return to upload</span></a>
+<a href="{{ url_for('upload') }}" id="run-tripod" class="btn"><span style="12px 50% no-repeat;">Return to upload</span></a>
 <hr>
 <script>
 function wait_for_update() {
@@ -19,5 +20,6 @@ function redirect() {
 wait_for_update();
 </script>
 <p>
-<a>This page will update when results are ready.</a>
+This page will update when results are ready.
+</div>
 {% endblock %}
