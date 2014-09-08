@@ -1,6 +1,6 @@
 # Overview
 
-Ballhead is a Flask application	for running triPOD analysis. It	utilizes the Celery distributed	task queue for process management.
+Ballhead is a Flask application	for running [triPOD](https://github.com/jdbaugher/tripod) analysis. It	utilizes the Celery distributed	task queue for process management.
 
 # Requirements
 
@@ -22,7 +22,7 @@ Ballhead is a Flask application	for running triPOD analysis. It	utilizes the Cel
 
 Install	Celery:
 
-    sudo pip install Celery
+    pip install Celery
 
 After installing Celery, copy the init.d script	to your init.d directory:	`cp celery/celeryd /etc/init.d/celeryd`.
 Also `mv celery/defaults.celeryd /etc/defaults/celeryd`. Make sure to edit default values to match installation	directories.
@@ -31,7 +31,7 @@ Also `mv celery/defaults.celeryd /etc/defaults/celeryd`. Make sure to edit defau
 
 Install	RabbitMQ:
 
-    sudo apt-get install rabbitmq-server
+    apt-get install rabbitmq-server
 
 ## Configure Apache
 
